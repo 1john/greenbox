@@ -17,7 +17,12 @@ from django.conf.urls import url
 from django.contrib import admin
 import views
 
+#serving static files for development
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 urlpatterns = [
     url(r'^$', views.home, name="home"),
     url(r'^admin/', admin.site.urls),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) #serving static files for development

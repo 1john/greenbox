@@ -1,0 +1,21 @@
+/* NAV BAR */
+body { 
+	padding-top: 60px;
+}
+.navbar a {
+ color: #008040;
+}
+.navbar {
+	height: 60px;
+}
+.navbar ul {
+	padding: 10px;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+	background-color: #00b359;
+}
+
+/* BODY */
+h1 {
+	color: #004d26;
+}
