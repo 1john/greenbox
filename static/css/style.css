@@ -5,9 +5,6 @@ body {
 .navbar a {
  color: #008040;
 }
-.navbar {
-	height: 60px;
-}
 .navbar ul {
 	padding: 10px;
 }

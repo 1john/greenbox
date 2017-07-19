@@ -17,13 +17,45 @@
 <!-- NAV BAR -->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
-    <ul class="nav nav-pills">
-      <li role="presentation" class="active navbar-right"><a href="#">Home</a></li>
-      <li role="presentation" class="navbar-right"><a href="#">Profile</a></li>
-      <li role="presentation" class="navbar-right"><a href="#">Messages</a></li>
-    </ul>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Green Box Branding</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-right nav-pills">
+        <li role="presentation" class="active"><a href="#">Services</a></li>
+        <li role="presentation" class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            Portfolio <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Photography</a></li>
+            <li><a href="#">Design</a></li>
+            <li><a href="#">Development</a></li>
+          </ul>
+        </li>
+        <li role="presentation"><a href="#"><span class="glyphicon glyphicon-user"></span> Contact</a></li>
+        <li role="presentation"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
+<script type="text/javascript">
+  //Stack menu when collapsed
+  $('#myNavbar').on('show.bs.collapse', function() {
+      $('.nav-pills').addClass('nav-stacked');
+  });
+
+  //Unstack menu when not collapsed
+  $('#myNavbar').on('hide.bs.collapse', function() {
+      $('.nav-pills').removeClass('nav-stacked');
+  });
+</script>
+<!-- END NAVBAR -->
 
 <div class="container-fluid">
   <h1>Green Box Branding</h1>
