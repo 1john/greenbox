@@ -24,5 +24,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', views.home, name="home"),
+    url(r'^contact/$', views.contact, name="contact"),
+    url(r'^login/$', views.login, name="login"),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) #serving static files for development
