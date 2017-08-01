@@ -1,3 +1,4 @@
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +28,6 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-right nav-pills">
-        <li role="presentation"><a href="/services">Services</a></li>
 <!--         <li role="presentation" class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
             Portfolio <span class="caret"></span>
@@ -38,8 +38,8 @@
             <li><a href="#">Development</a></li>
           </ul>
         </li> -->
-        <li role="presentation" class="active"><a href="/contact"><span class="active glyphicon glyphicon-user"></span> Contact</a></li>
-        <li role="presentation"><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><p>logged in as {{ team }}</p></li>
+        <li role="presentation" class="active"><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
       </ul>
     </div>
   </div>
@@ -58,9 +58,10 @@
 <!-- END NAVBAR -->
 
 <div class="container-fluid">
-  <h1>Contact Page</h1>
-  <p>Where we tell them how to reach us.</p> 
+  <h1>User Dashboard</h1>
+  <p>Where they can CRUD "items"</p>
 </div>
 
 </body>
 </html>
+{% endblock %}

@@ -23,11 +23,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Green Box Branding</a>
+      <a class="navbar-brand" href="/">Green Box Branding</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-right nav-pills">
-        <li role="presentation" ><a href="/">Services</a></li>
+        <li role="presentation" ><a href="/services">Services</a></li>
 <!--         <li role="presentation" class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
             Portfolio <span class="caret"></span>
@@ -58,8 +58,37 @@
 <!-- END NAVBAR -->
 
 <div class="container-fluid">
-  <h1>Green Box Branding</h1>
-  <p>Providing all the things.</p> 
+    <div id="login">
+        {% if code == "bad_pass" %}
+          <p>Bad Password, try again</p>
+        {% endif %}
+        {% if code == "bad_user" %}
+          <p>Username not found, try again</p>
+        {% endif %}
+        <!-- <div class="dot-bg"></div> -->
+      <div class="bg"></div>
+        <div class="head">   
+            <div class="container">
+                <a href="/" class="brand"></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container">
+                <div class="form-module text-center">
+                    <h2>Welcome back!</h2>
+                    <hr></hr>
+                    <form action="../auth/" method="POST" id="employer-login-form">{% csrf_token %}
+                        <label>Email</label>
+                        <input class="log-input" type ="text" name="username" id="username">
+                        <label>Password</label>
+                        <input class="log-input" type ="password" name="password" id="password">
+<!--                         <p><a href="/recover/">Forgot password</a>?</p> -->
+                        <input class="submit-login" type="submit" value="Login" />
+                    </form>
+                </div>
+            </div>
+        </div>  
+    </div>
 </div>
 
 </body>
