@@ -8,3 +8,4 @@ class ShowcaseConfig(AppConfig):
     name = 'showcase'
 
 admin.site.register(Team)
+admin.site.register(Item)

@@ -1,0 +1,19 @@
+{% extends "templates/showcase/showcasebase.html" %}
+{% block content %}
+<h1>ITEM PAGE</h1>
+{% if item %}
+	<p> item found</p>
+	<form action="/item/{{item.id }}/" method="post">
+	    {% csrf_token %}
+	    {{ form.as_ul }}
+	    <input type="submit" value="Submit" />
+	</form>
+{% else %}
+	<p> item not found</p>
+	<form action="/item/" method="post">
+	    {% csrf_token %}
+	    {{ form.as_ul }}
+	    <input type="submit" value="Submit" />
+	</form>
+{% endif %}
+{% endblock %}

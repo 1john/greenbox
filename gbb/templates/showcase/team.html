@@ -1,0 +1,9 @@
+{% extends "templates/showcase/showcasebase.html" %}
+{% block content %}
+	<h1>TEAM PAGE</h1>
+	<form action="/team/" method="post">
+	    {% csrf_token %}
+	    {{ form.as_ul }}
+	    <input type="submit" value="Submit" />
+	</form>
+{% endblock %}

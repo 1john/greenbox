@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 import views
+from showcase import views as showcaseviews
 
 #serving static files for development
 from django.conf import settings
@@ -28,7 +29,13 @@ urlpatterns = [
     url(r'^login/$', views.login_view, name="login"),
     url(r'^logout/$', views.logout_view, name="logout"),
     url(r'^auth/$', views.auth_view, name="auth"),
-    url(r'^dashboard/$', views.dashboard, name="dashboard"),
     url(r'^services/$', views.services, name="services"),
+    #showcase
+    url(r'^team/$', showcaseviews.team, name="team"),
+    url(r'^item/$', showcaseviews.item, name="item"),
+    url(r'^item/(?P<item_id>[-\w]+)/$', showcaseviews.item, name="item"),
+    url(r'^delete/(?P<item_id>[-\w]+)/$', showcaseviews.delete, name="delete"),
+    url(r'^dashboard/$', showcaseviews.dashboard, name="dashboard"),
+    #admin
     url(r'^admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) #serving static files for development

@@ -1,0 +1,31 @@
+{% extends "templates/showcase/showcasebase.html" %}
+{% block content %}
+<!-- MAIN CONTENT -->
+<div class="container-fluid">
+  <h1>User Dashboard</h1>
+  <p>Where they can CRUD "items"</p>
+  <a href="/item/">CREATE NEW ITEM BUTTON</a>
+  <ul>
+    {% for item in items %}
+      <li>
+        <table>
+          <tr>
+            <h3>{{ item.name }}</h3>
+            <p>Description: {{ item.description }}</p>
+            <p>Item ID: {{ item.id }}
+          </tr>
+          <tr>
+            <img src="{{item.img_url}}" height="128" width="128">
+          </tr>
+          <tr>
+            <a href="/item/{{item.id}}">EDIT BUTTON</a>
+            <a href="/delete/{{item.id}}">DELETE BUTTON</a>
+          </tr>
+        </table>
+      </li>
+    {% endfor %}
+  </ul>
+
+</div>
+<!-- END MAIN CONTENT -->
+{% endblock %}

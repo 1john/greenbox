@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect #, HttpResponse, JsonResponse
 from django.contrib.auth.models import User #, Group
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from showcase.models import Team
 
 
 def home(request):
@@ -11,8 +12,8 @@ def home(request):
 def contact(request):
     return render(request, 'templates/contact.html')
 
-# def login(request):
-#     return render(request, 'templates/login.html')
+def services(request):
+    return render(request, 'templates/services.html')
 
 def auth_view(request):
     username = request.POST.get('username', '').lower()
@@ -36,8 +37,10 @@ def auth_view(request):
 
 def login_view(request):
     if request.user.is_authenticated():
-        #return HttpResponseRedirect('/dashboard/' + User.team.name)
-        return HttpResponseRedirect('/dashboard/')
+        if Team.objects.filter(user=request.user).exists():
+            return HttpResponseRedirect('/dashboard/')
+        else:
+            return HttpResponseRedirect('/team')
 
     storage = messages.get_messages(request)
     for m in storage:
@@ -55,14 +58,3 @@ def logout_view(request):
     # messages.info(request, 'from logout') #message to tell user they just logged out on home page redirect
     return HttpResponseRedirect('/')
 
-def dashboard(request):
-    #add/edit/delete "items"
-
-    #team = request.user.team.name
-    team = "team name here"
-
-    args = {'team' : team}
-    return render(request, 'templates/dashboard.html', args)
-
-def services(request):
-    return render(request, 'templates/services.html')
