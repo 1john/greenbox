@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'^team/$', showcaseviews.team, name="team"),
     url(r'^item/$', showcaseviews.item, name="item"),
     url(r'^item/(?P<item_id>[-\w]+)/$', showcaseviews.item, name="item"),
+    url(r'^sign_s3_put/$', showcaseviews.sign_s3_put, name="sign_s3_put"),
     url(r'^delete/(?P<item_id>[-\w]+)/$', showcaseviews.delete, name="delete"),
     url(r'^dashboard/$', showcaseviews.dashboard, name="dashboard"),
     #admin

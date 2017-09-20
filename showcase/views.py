@@ -2,11 +2,14 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-from django.http import HttpResponseRedirect #, HttpResponse, JsonResponse
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.template.context_processors import csrf
 from django.contrib.auth.models import User
 from models import Team, Item
 from forms import TeamForm, ItemForm
+from hashlib import sha1 #for s3_sign_put
+import time, os, urllib, hmac, json, binascii, base64 #for s3_sign_put
+
 
 
 def team(request): #create/update team object
@@ -41,8 +44,11 @@ def dashboard(request): #view/delete item objects
     return render(request, 'templates/showcase/dashboard.html', args)
 
 def item(request, item_id=None): #add/edit item object
+    file_structure = str(os.environ.get('DJANGO_ENV')) + '/teams/'
     if Team.objects.filter(user=request.user).exists():
         team = Team.objects.get(user=request.user)
+        file_structure += str(team.name) + '/items/'
+
     else:
         HttpResponseRedirect('/team')
 
@@ -66,6 +72,7 @@ def item(request, item_id=None): #add/edit item object
 
     args.update({'team' : team})
     args.update({'form' : form})
+    args.update({'file_structure' : file_structure})
     #args.update(csrf(request))
     return render(request, 'templates/showcase/item.html', args)
 
@@ -76,3 +83,35 @@ def delete(request, item_id=None): #delete item object
         return HttpResponseRedirect('/dashboard')
     else:
         return HttpResponseRedirect('/dashboard')
+
+#response to client side request with signed signature for amazon s3 using environment variable credentials
+def sign_s3_put(request):
+    #logger = logging.getLogger(__name__)
+
+    s3_bucket_name = os.environ.get('S3_BUCKET_NAME')
+    s3_access_key = os.environ.get('S3_KEY')
+    s3_secret_key = os.environ.get('S3_SECRET')
+
+    object_name = request.GET.get('s3_object_name')
+   
+    mime_type = request.GET.get('s3_object_type')
+
+    expires = int(time.time()+300)
+    amz_headers = "x-amz-acl:public-read"
+
+    put_request = "PUT\n\n%s\n%d\n%s\n/%s/%s" % (mime_type, expires, amz_headers, s3_bucket_name, object_name)
+
+    hashed = hmac.new(s3_secret_key, put_request, sha1)
+    signature = binascii.b2a_base64(hashed.digest())[:-1]
+    signature = urllib.quote_plus(signature.strip())
+
+    url = 'https://%s.s3.amazonaws.com/%s' % (s3_bucket_name, object_name)
+
+    signed_request = '%s?AWSAccessKeyId=%s&Expires=%d&Signature=%s' % (url, s3_access_key, expires, signature)
+
+    #logger.info('Signature: ' + signature)
+    
+    return HttpResponse(json.dumps({
+    'signed_request': signed_request,
+    'url': url
+    }), content_type='application/json')

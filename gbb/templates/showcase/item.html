@@ -1,5 +1,6 @@
 {% extends "templates/showcase/showcasebase.html" %}
 {% block content %}
+{% load static %}
 <h1>ITEM PAGE</h1>
 {% if item %}
 	<p> item found</p>
@@ -16,4 +17,18 @@
 	    <input type="submit" value="Submit" />
 	</form>
 {% endif %}
+<div class="col-md-4">
+	<img id="image_preview" src="{% static 'img/item_img_placeholder.png' %}" height="128" width="128">
+    <input id="img_file" type="file" />
+    <input type="hidden" id="img_url" name="img_url" value="" />
+</div>
+    <script type="text/javascript" src="{% static 'js/s3upload.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/s3_upload.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/check_files.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            document.getElementById('img_file').addEventListener('change', check_img, false);
+            document.getElementById('img_file').param = "{{ file_structure }}";
+        });
+    </script>
 {% endblock %}
