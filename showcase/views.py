@@ -29,7 +29,9 @@ def team(request): #create/update team object
     else:
     	form = TeamForm()
 
-    args = {'form' : form}
+    args = {}
+    args['form'] = form
+    args['team'] = team
     #args.update(csrf(request))
     return render(request, 'templates/showcase/team.html', args)
 

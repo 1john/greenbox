@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^login/$', views.login_view, name="login"),
     url(r'^logout/$', views.logout_view, name="logout"),
     url(r'^auth/$', views.auth_view, name="auth"),
-    url(r'^services/$', views.services, name="services"),
+    #url(r'^services/$', views.services, name="services"),
     #showcase
     url(r'^team/$', showcaseviews.team, name="team"),
     url(r'^item/$', showcaseviews.item, name="item"),

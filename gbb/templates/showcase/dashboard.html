@@ -2,26 +2,32 @@
 {% block content %}
 <!-- MAIN CONTENT -->
 <div class="container">
-<div class="col-12 col-md-9">
-  <h2 class="bd-featurette-title">Your Showcase</h2>
-  <a href="/item/" class="btn btn-success btn-lg">Create New</a>
+<div class="col-12 col-md-9 col-centered">
+  <div class="col-md-8 col-centered">
+      <h1 class="bd-featurette-title">Dashboard</h1>
+      <p class="bd-lead">Here you can create, edit, and delete items in your showcase</p>
+  </div>
+  <a id="create-new-item-button" href="/item/" class="btn btn-success btn-lg">Create New</a>
   {% for item in items %}
-  <div class="row-container">
     <div class="row">
       <div class="col-sm-6 mb-3">
         <img src="{{item.img_url}}" height="256" width="256">
       </div>
       <div class="col-sm-6 mb-3">
         <h3>{{ item.name }}</h3>
-        <p>Description: {{ item.description }}</p>
+        <p>{{ item.description }}</p>
         <a href="/item/{{item.id}}" class="btn btn-success btn-lg">Edit</a>
         <a href="/delete/{{item.id}}" class="btn btn-success btn-lg">Delete</a>
-        <p>Item ID: {{ item.id }}</p>
       </div>
     </div>
-  </div>
   {% endfor %}
 </div>
 </div>
+<script type="text/javascript">
+  function activeNav(){
+    document.getElementById("dashboard-nav-container").className += "active";
+  }
+  window.onload = activeNav;
+</script>
 <!-- END MAIN CONTENT -->
 {% endblock %}

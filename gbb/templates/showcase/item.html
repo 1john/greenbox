@@ -5,8 +5,11 @@
 
 {% if item %}
 <div class="container">
-<div class="col-12 col-md-9">
-	<h2 class="bd-featurette-title">Edit an Item</h2>
+<div class="col-md-9 col-centered">
+	<div class="col-md-8 col-centered">
+		<h1 class="bd-featurette-title">Edit Item</h1>
+		<p class="bd-lead">Change the item's name, description, or image.</p>
+	</div>
 	<div class="row">
 		<div class="col-sm-6 mb-3">
 			<img id="image_preview" src="{{ item.img_url }}" height="256" width="256">
@@ -16,23 +19,20 @@
 		<div class="col-sm-6 mb-3">
 			<form action="/item/{{item.id}}/" method="post">
 			    {% csrf_token %}
-				<div class="form-group row">
+				<div class="form-group">
 			    	<label for="name" class="col-2 col-form-label">Name</label>
 		    		{% render_field form.name class="form-control" %}
 			    </div>
-		  		<div class="form-group row">
+		  		<div class="form-group">
 				    <label for="description" class="col-2 col-form-label">Description</label>
 			    	{% render_field form.description class="form-control" %}
 				</div>
-				<div class="form-group row">
+				<div class="form-group">
 				    <label for="img_url" class="col-2 col-form-label">Image URL</label>
 			    	{% render_field form.img_url class="form-control" disabled=disabled%}
 				</div>
 				<input id="submit" disabled="true" type="submit" value="Submit" class="btn btn-success btn-lg"/>
 			</form>
-			{% for error in form.errors %}
-				<p>{{ error }}</p>
-			{% endfor %}
 		</div>
 	</div>
 </div>
@@ -48,9 +48,12 @@
 </script>
 {% else %}
 <div class="container">
-<div class="col-12 col-md-9">
-	<h2 class="bd-featurette-title">Create a New Item</h2>
-	<div class="row">
+<div class="col-md-9 col-centered">
+		<div class="col-md-8 col-centered">
+			<h1 class="bd-featurette-title">New Item</h1>
+			<p class="bd-lead">Input the item's name and description, then select an image. When it has finished uploading, click submit.</p>
+		</div>
+		<div class="row">
 		<div class="col-sm-6 mb-3">
 			<img id="image_preview" src="{% static 'img/item_img_placeholder.png' %}" height="256" width="256">
 		    <input id="img_file" type="file" class="form-control-file"/>
@@ -60,15 +63,15 @@
 		<div class="col-sm-6 mb-3">
 			<form action="/item/" method="post">
 			    {% csrf_token %}
-				<div class="form-group row">
+				<div class="form-group">
 			    	<label for="name" class="col-2 col-form-label">Name</label>
 		    		{% render_field form.name class="form-control" %}
 			    </div>
-		  		<div class="form-group row">
+		  		<div class="form-group">
 				    <label for="description" class="col-2 col-form-label">Description</label>
 			    	{% render_field form.description class="form-control" %}
 				</div>
-				<div class="form-group row">
+				<div class="form-group">
 				    <label for="img_url" class="col-2 col-form-label">Image URL {{form.img_url.errors}}</label>
 			    	{% render_field form.img_url class="form-control" disabled=disabled %}
 				</div>

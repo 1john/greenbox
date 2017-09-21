@@ -16,26 +16,51 @@ body {
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
 	background-color: #00b359;
 }
-
+#navbar-brand-container {
+    margin-top: 6px;
+    margin-left: 20px;
+}
+#navbar-brand-container a {
+    color: #004F2D;
+}
 /* BODY */
 h1 {
-	color: #0C3C26;
+	color: #004F2D;
 }
 
 h2 {
-	color: #0C3C26;
+	color: #004F2D;
 }
 .bd-featurette-title {
 	padding-top: 6rem;
-	padding-bottom: 6rem;
 	text-align: center;
 	font-size: 40px;
 }
 
-.row-container {
-	background-color: #e7e7e7;
+.row {
+/*	margin: 40px;
+*/	background-color: #e7e7e7;
+	padding: 40px;
+	margin: 40px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 3px grey;
 }
 
-.row {
-	margin: 40px;
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.bd-lead {
+	font-size: 24px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+img {
+	margin: 20px;
+}
+
+#create-new-item-button{
+	margin-left: 40px;
 }

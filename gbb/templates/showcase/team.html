@@ -1,9 +1,47 @@
 {% extends "templates/showcase/showcasebase.html" %}
 {% block content %}
-	<h1>TEAM PAGE</h1>
-	<form action="/team/" method="post">
-	    {% csrf_token %}
-	    {{ form.as_ul }}
-	    <input type="submit" value="Submit" />
-	</form>
+{% load widget_tweaks %}
+
+<div class="container">
+	<div class="col-md-8 col-centered">
+		<h1 class="bd-featurette-title">Your Team</h1>
+		<p class="bd-lead">Edit your team's information. This will be used on your site for contact purposes.</p>
+	</div>
+	<div class="col-md-6 col-centered">
+		<form action="/team/" method="post">
+	    	{% csrf_token %}
+			<div class="form-group">
+		    	<label for="address1" class="col-2 col-form-label">Street Address</label>
+	    		{% render_field form.address1 class="form-control" %}
+		    </div>
+			<div class="form-group">
+		    	<label for="address2" class="col-2 col-form-label">Address line 2</label>
+	    		{% render_field form.address2 class="form-control" %}
+		    </div>
+			<div class="form-group">
+		    	<label for="city" class="col-2 col-form-label">City</label>
+	    		{% render_field form.city class="form-control" %}
+		    </div>
+			<div class="form-group">
+		    	<label for="state" class="col-2 col-form-label">State</label>
+	    		{% render_field form.state class="form-control" %}
+		    </div>
+			<div class="form-group">
+		    	<label for="zip_code" class="col-2 col-form-label">Zip Code</label>
+	    		{% render_field form.zip_code class="form-control" %}
+		    </div>
+			<div class="form-group">
+		    	<label for="phone_number" class="col-2 col-form-label">Phone Number</label>
+	    		{% render_field form.phone_number class="form-control" %}
+		    </div>
+		    <input type="submit" value="Submit" class="btn btn-success btn-lg"/>
+		</form>
+	</div>
+</div>
+<script type="text/javascript">
+  function activeNav(){
+    document.getElementById("team-nav-container").className += "active";
+  }
+  window.onload = activeNav;
+</script>
 {% endblock %}

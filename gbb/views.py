@@ -12,8 +12,8 @@ def home(request):
 def contact(request):
     return render(request, 'templates/contact.html')
 
-def services(request):
-    return render(request, 'templates/services.html')
+# def services(request):
+#     return render(request, 'templates/services.html')
 
 def auth_view(request):
     username = request.POST.get('username', '').lower()
