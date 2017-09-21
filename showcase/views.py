@@ -56,7 +56,6 @@ def item(request, item_id=None): #add/edit item object
     if item_id:
         item = Item.objects.get(id=item_id)
         args.update({'item' : item})
-
     else:
         item = None
 
@@ -88,7 +87,7 @@ def delete(request, item_id=None): #delete item object
 def sign_s3_put(request):
     #logger = logging.getLogger(__name__)
 
-    s3_bucket_name = os.environ.get('S3_BUCKET_NAME')
+    s3_bucket_name = os.environ.get('S3_BUCKET')
     s3_access_key = os.environ.get('S3_KEY')
     s3_secret_key = os.environ.get('S3_SECRET')
 

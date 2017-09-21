@@ -14,8 +14,9 @@ function check_img(e){
         var sFileExtension = file.name.split(".").pop().toLowerCase();
         //param is sent through from template
 
-        sFileName = e.target.param + 'logo.' + sFileExtension;
-        
+        //sFileName = e.target.param + 'img-' + new Date().toJSON() + '.' sFileExtension;
+        var sFileName = e.target.param + file.name
+
         var iFileSize = file.size;
         var iConvert = (file.size / 10485760).toFixed(2);
         if (iFileSize > 10485760) {

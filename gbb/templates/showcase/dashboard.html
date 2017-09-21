@@ -1,31 +1,27 @@
 {% extends "templates/showcase/showcasebase.html" %}
 {% block content %}
 <!-- MAIN CONTENT -->
-<div class="container-fluid">
-  <h1>User Dashboard</h1>
-  <p>Where they can CRUD "items"</p>
-  <a href="/item/">CREATE NEW ITEM BUTTON</a>
-  <ul>
-    {% for item in items %}
-      <li>
-        <table>
-          <tr>
-            <h3>{{ item.name }}</h3>
-            <p>Description: {{ item.description }}</p>
-            <p>Item ID: {{ item.id }}
-          </tr>
-          <tr>
-            <img src="{{item.img_url}}" height="128" width="128">
-          </tr>
-          <tr>
-            <a href="/item/{{item.id}}">EDIT BUTTON</a>
-            <a href="/delete/{{item.id}}">DELETE BUTTON</a>
-          </tr>
-        </table>
-      </li>
-    {% endfor %}
-  </ul>
-
+<div class="container">
+<div class="col-12 col-md-9">
+  <h2 class="bd-featurette-title">Your Showcase</h2>
+  <a href="/item/" class="btn btn-success btn-lg">Create New</a>
+  {% for item in items %}
+  <div class="row-container">
+    <div class="row">
+      <div class="col-sm-6 mb-3">
+        <img src="{{item.img_url}}" height="256" width="256">
+      </div>
+      <div class="col-sm-6 mb-3">
+        <h3>{{ item.name }}</h3>
+        <p>Description: {{ item.description }}</p>
+        <a href="/item/{{item.id}}" class="btn btn-success btn-lg">Edit</a>
+        <a href="/delete/{{item.id}}" class="btn btn-success btn-lg">Delete</a>
+        <p>Item ID: {{ item.id }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 </div>
 <!-- END MAIN CONTENT -->
 {% endblock %}

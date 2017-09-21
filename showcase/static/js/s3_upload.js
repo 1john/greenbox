@@ -16,13 +16,15 @@ function s3_upload_img(extension, file_in, try_in){
         s3_sign_put_url: '/sign_s3_put/',
         s3_object_name: filename,
         onProgress: function(percent, message) {
-            // $('#img_status').css('height', .01*percent*60 + 'px');
+            //console.log(document.getElementById("image_preview").getAttribute("src"));
+            if(document.getElementById("image_preview").getAttribute("src") !== "../static/img/image_loading.gif"){
+                $('#image_preview').attr('src', "../static/img/image_loading.gif");
+            }
         },
         onFinishS3Put: function(url) {
-            $("#img_url").val(url);
-            console.log("img url : " + url)
-            $('#img_preview').src(url)
-            // $(".form-module").find("label.img-upload").css({"background-image": "url("+url+")", "background-position" : "center 40px"});
+            $("#id_img_url").val(url);
+            $('#image_preview').attr('src', url);
+            enable_button();
         },
         onError: function(status) {
             if(trynum < 1){ //amount of tries
@@ -38,3 +40,6 @@ function s3_upload_img(extension, file_in, try_in){
     });
 }
 
+function enable_button(){
+    document.getElementById('submit').disabled = false;
+}

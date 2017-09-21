@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'showcase',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

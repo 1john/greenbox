@@ -1,32 +1,97 @@
 {% extends "templates/showcase/showcasebase.html" %}
 {% block content %}
 {% load static %}
-<h1>ITEM PAGE</h1>
+{% load widget_tweaks %}
+
 {% if item %}
-	<p> item found</p>
-	<form action="/item/{{item.id }}/" method="post">
-	    {% csrf_token %}
-	    {{ form.as_ul }}
-	    <input type="submit" value="Submit" />
-	</form>
-{% else %}
-	<p> item not found</p>
-	<form action="/item/" method="post">
-	    {% csrf_token %}
-	    {{ form.as_ul }}
-	    <input type="submit" value="Submit" />
-	</form>
-{% endif %}
-<div class="col-md-4">
-	<img id="image_preview" src="{% static 'img/item_img_placeholder.png' %}" height="128" width="128">
-    <input id="img_file" type="file" />
-    <input type="hidden" id="img_url" name="img_url" value="" />
+<div class="container">
+<div class="col-12 col-md-9">
+	<h2 class="bd-featurette-title">Edit an Item</h2>
+	<div class="row">
+		<div class="col-sm-6 mb-3">
+			<img id="image_preview" src="{{ item.img_url }}" height="256" width="256">
+		    <input id="img_file" type="file" class="form-control-file"/>
+		    <small id="fileHelp" class="form-text text-muted">If loading takes too long, try a smaller or lower quality image.</small>
+		</div>
+		<div class="col-sm-6 mb-3">
+			<form action="/item/{{item.id}}/" method="post">
+			    {% csrf_token %}
+				<div class="form-group row">
+			    	<label for="name" class="col-2 col-form-label">Name</label>
+		    		{% render_field form.name class="form-control" %}
+			    </div>
+		  		<div class="form-group row">
+				    <label for="description" class="col-2 col-form-label">Description</label>
+			    	{% render_field form.description class="form-control" %}
+				</div>
+				<div class="form-group row">
+				    <label for="img_url" class="col-2 col-form-label">Image URL</label>
+			    	{% render_field form.img_url class="form-control" disabled=disabled%}
+				</div>
+				<input id="submit" disabled="true" type="submit" value="Submit" class="btn btn-success btn-lg"/>
+			</form>
+			{% for error in form.errors %}
+				<p>{{ error }}</p>
+			{% endfor %}
+		</div>
+	</div>
 </div>
+</div>
+<script type="text/javascript">
+	function enable_button(){
+	    document.getElementById('submit').disabled = false;
+	}
+    $(document).ready(function() {
+        document.getElementById('id_name').addEventListener('keydown', enable_button, false);
+        document.getElementById('id_description').addEventListener('keydown', enable_button, false);
+    });
+</script>
+{% else %}
+<div class="container">
+<div class="col-12 col-md-9">
+	<h2 class="bd-featurette-title">Create a New Item</h2>
+	<div class="row">
+		<div class="col-sm-6 mb-3">
+			<img id="image_preview" src="{% static 'img/item_img_placeholder.png' %}" height="256" width="256">
+		    <input id="img_file" type="file" class="form-control-file"/>
+		    <small id="fileHelp" class="form-text text-muted">If loading takes too long, try a smaller or lower quality image.</small>
+		</div>
+		
+		<div class="col-sm-6 mb-3">
+			<form action="/item/" method="post">
+			    {% csrf_token %}
+				<div class="form-group row">
+			    	<label for="name" class="col-2 col-form-label">Name</label>
+		    		{% render_field form.name class="form-control" %}
+			    </div>
+		  		<div class="form-group row">
+				    <label for="description" class="col-2 col-form-label">Description</label>
+			    	{% render_field form.description class="form-control" %}
+				</div>
+				<div class="form-group row">
+				    <label for="img_url" class="col-2 col-form-label">Image URL {{form.img_url.errors}}</label>
+			    	{% render_field form.img_url class="form-control" disabled=disabled %}
+				</div>
+				<input id="submit" disabled="true" type="submit" value="Submit" class="btn btn-success btn-lg"/>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+{% endif %}
+
+
+
     <script type="text/javascript" src="{% static 'js/s3upload.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/s3_upload.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/check_files.js' %}"></script>
     <script type="text/javascript">
+	    function enable_field(){
+	    	document.getElementById('id_img_url').disabled = false;
+	    }
+
         $(document).ready(function() {
+        	document.getElementById('submit').addEventListener('click', enable_field, false);
             document.getElementById('img_file').addEventListener('change', check_img, false);
             document.getElementById('img_file').param = "{{ file_structure }}";
         });

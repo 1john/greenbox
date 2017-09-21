@@ -19,5 +19,23 @@ body {
 
 /* BODY */
 h1 {
-	color: #666;
+	color: #0C3C26;
+}
+
+h2 {
+	color: #0C3C26;
+}
+.bd-featurette-title {
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+	text-align: center;
+	font-size: 40px;
+}
+
+.row-container {
+	background-color: #e7e7e7;
+}
+
+.row {
+	margin: 40px;
 }

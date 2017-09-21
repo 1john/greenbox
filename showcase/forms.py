@@ -53,6 +53,6 @@ class ItemForm(forms.ModelForm):
         fields = ('name', 'description', 'img_url')
         exclude = ['team']
 
-    name = forms.CharField(max_length=128, widget=forms.TextInput(attrs={'id': 'name'})),
-    description = forms.CharField(max_length=4096, widget=forms.TextInput(attrs={'id': 'description'})),
-    img_url = forms.CharField(max_length=128, widget=forms.HiddenInput(attrs={'id': 'img_url'})),
+    name = forms.CharField(max_length=128, widget=forms.TextInput(attrs={'id':'name'})),
+    description = forms.CharField(max_length=4096, widget=forms.TextInput(attrs={'id':'description'})),
+    img_url = forms.CharField(max_length=128, widget=forms.TextInput(attrs={'id':'img_url'})),
