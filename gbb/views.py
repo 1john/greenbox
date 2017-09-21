@@ -12,7 +12,7 @@ def home(request):
 def contact(request):
     return render(request, 'templates/contact.html')
 
-# def services(request):
+# Fdef services(request):
 #     return render(request, 'templates/services.html')
 
 def auth_view(request):
@@ -29,8 +29,14 @@ def auth_view(request):
 
     if user is not None:
         login(request, user)
-        #return HttpResponseRedirect('/dashboard/' + User.team.name)
-        return HttpResponseRedirect('/dashboard/')
+        if Team.objects.filter(user=user).exists():
+            team = Team.objects.get(user=request.user)
+            if team.address1:
+                return HttpResponseRedirect('/dashboard/')
+            else:
+                return HttpResponseRedirect('/team')
+        else:
+            return HttpResponseRedirect('/team')
     else:
         messages.info(request, 'bad password')
         return HttpResponseRedirect('/login')
@@ -38,7 +44,11 @@ def auth_view(request):
 def login_view(request):
     if request.user.is_authenticated():
         if Team.objects.filter(user=request.user).exists():
-            return HttpResponseRedirect('/dashboard/')
+            team = Team.objects.get(user=request.user)
+            if team.address1:
+                return HttpResponseRedirect('/dashboard/')
+            else:
+                return HttpResponseRedirect('/team')
         else:
             return HttpResponseRedirect('/team')
 
@@ -57,4 +67,3 @@ def logout_view(request):
     logout(request)
     # messages.info(request, 'from logout') #message to tell user they just logged out on home page redirect
     return HttpResponseRedirect('/')
-
