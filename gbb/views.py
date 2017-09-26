@@ -18,7 +18,10 @@ def home(request, site_name=None):
         except Site.DoesNotExist:
             return HttpResponseRedirect('/')
     else:
-        current_site = get_current_site(request)
+        try:
+            current_site = get_current_site(request)
+        except Site.DoesNotExist:
+            return HttpResponseRedirect('/')
 
     try:
         team = Team.objects.get(site=current_site)
@@ -41,7 +44,10 @@ def showcase(request, site_name=None):
         except Site.DoesNotExist:
             return HttpResponseRedirect('/')
     else:
-        current_site = get_current_site(request)
+        try:
+            current_site = get_current_site(request)
+        except Site.DoesNotExist:
+            return HttpResponseRedirect('/')
     
     team = Team.objects.get(site=current_site)
     template += 'sites/' + team.template_dir + '/'
@@ -62,7 +68,10 @@ def contact(request, site_name=None):
         except Site.DoesNotExist:
             return HttpResponseRedirect('/')
     else:
-        current_site = get_current_site(request)
+        try:
+            current_site = get_current_site(request)
+        except Site.DoesNotExist:
+            return HttpResponseRedirect('/')
 
     team = Team.objects.get(site=current_site)
     template += 'sites/' + team.template_dir + '/'    
