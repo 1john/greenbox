@@ -16,12 +16,12 @@ def home(request, site_name=None):
         try:
             current_site = Site.objects.get(name=site_name)
         except Site.DoesNotExist:
-            return HttpResponseRedirect('/')
+            return render(request, 'templates/index.html')
     else:
         try:
             current_site = get_current_site(request)
         except Site.DoesNotExist:
-            return HttpResponseRedirect('/')
+            return render(request, 'templates/index.html')
 
     try:
         team = Team.objects.get(site=current_site)
