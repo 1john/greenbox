@@ -36,7 +36,7 @@ class TeamForm(forms.ModelForm):
     class Meta:
         model = Team
         fields = ('address1', 'address2', 'city', 'state', 'zip_code', 'phone_number')
-        exclude = ['name', 'user']
+        exclude = ['name', 'user', 'site', 'template_dir']
 
     name = forms.CharField(max_length=128, widget=forms.TextInput(attrs={'id': 'name'})),
     address1 = forms.CharField(max_length=64, widget=forms.TextInput(attrs={'id': 'address1'})),

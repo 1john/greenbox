@@ -49,7 +49,7 @@ def item(request, item_id=None): #add/edit item object
     file_structure = str(os.environ.get('DJANGO_ENV')) + '/teams/'
     if Team.objects.filter(user=request.user).exists():
         team = Team.objects.get(user=request.user)
-        file_structure += str(team.name) + '/items/'
+        file_structure += str(team.template_dir) + '/items/'
 
     else:
         HttpResponseRedirect('/team')

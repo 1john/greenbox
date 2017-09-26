@@ -17,7 +17,6 @@ from django.conf.urls import url
 from django.contrib import admin
 import views
 from showcase import views as showcaseviews
-
 #serving static files for development
 from django.conf import settings
 from django.conf.urls.static import static
@@ -25,7 +24,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', views.home, name="home"),
-    url(r'^contact/$', views.contact, name="contact"),
+    url(r'^contact_us/$', views.contact_us, name="contact_us"),
     url(r'^login/$', views.login_view, name="login"),
     url(r'^logout/$', views.logout_view, name="logout"),
     url(r'^auth/$', views.auth_view, name="auth"),
@@ -37,6 +36,14 @@ urlpatterns = [
     url(r'^sign_s3_put/$', showcaseviews.sign_s3_put, name="sign_s3_put"),
     url(r'^delete/(?P<item_id>[-\w]+)/$', showcaseviews.delete, name="delete"),
     url(r'^dashboard/$', showcaseviews.dashboard, name="dashboard"),
+    
+    #sites
+    url(r'^sites/(?P<site_name>[-\w]+)/$', views.home, name="home"),
+    url(r'^showcase/$', views.showcase, name="showcase"),
+    url(r'^showcase/(?P<site_name>[-\w]+)/$', views.showcase, name="showcase"),
+    url(r'^contact/$', views.contact, name="contact"),
+    url(r'^contact/(?P<site_name>[-\w]+)/$', views.contact, name="contact"),
+
     #admin
     url(r'^admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) #serving static files for development

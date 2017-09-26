@@ -2,6 +2,10 @@
 body { 
 	padding-top: 60px;
 }
+
+.navbar {
+	border-width: 2px;
+}
 .navbar a {
  color: #008040;
 }
@@ -23,6 +27,7 @@ body {
 #navbar-brand-container a {
     color: #004F2D;
 }
+
 /* BODY */
 h1 {
 	color: #004F2D;
@@ -39,11 +44,14 @@ h2 {
 
 .row {
 /*	margin: 40px;
-*/	background-color: #e7e7e7;
+*/	background-color: #f8f8f8;
 	padding: 40px;
 	margin: 40px;
     border-radius: 25px;
-    box-shadow: 5px 5px 3px grey;
+    box-shadow: 4px 4px 2px grey;
+    border-color: #e7e7e7;
+    border-width: 2px;
+    border-style: solid;
 }
 
 .col-centered {
@@ -55,10 +63,6 @@ h2 {
 	font-size: 24px;
 	margin-bottom: 20px;
 	text-align: center;
-}
-
-img {
-	margin: 20px;
 }
 
 #create-new-item-button{

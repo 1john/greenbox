@@ -3,16 +3,79 @@ from django.http import HttpResponseRedirect #, HttpResponse, JsonResponse
 from django.contrib.auth.models import User #, Group
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from showcase.models import Team
+from showcase.models import Team, Item
+from django.contrib.sites.shortcuts import get_current_site
+from django.contrib.sites.models import Site
 
 
-def home(request):
-    return render(request, 'templates/index.html')
+def home(request, site_name=None):
+    template = 'templates/'
+    args = {}
 
-def contact(request):
-    return render(request, 'templates/contact.html')
+    if site_name:
+        try:
+            current_site = Site.objects.get(name=site_name)
+        except Site.DoesNotExist:
+            return HttpResponseRedirect('/')
+    else:
+        current_site = get_current_site(request)
 
-# Fdef services(request):
+    try:
+        team = Team.objects.get(site=current_site)
+        template += 'sites/' + team.template_dir + '/'
+        
+        args['site_name'] = team.template_dir
+        args['team'] = team
+        return render(request, template+'index.html', args)
+    
+    except Team.DoesNotExist:
+        return render(request, 'templates/index.html')
+
+
+def showcase(request, site_name=None):
+    template = 'templates/'
+    
+    if site_name:
+        try:
+            current_site = Site.objects.get(name=site_name)
+        except Site.DoesNotExist:
+            return HttpResponseRedirect('/')
+    else:
+        current_site = get_current_site(request)
+    
+    team = Team.objects.get(site=current_site)
+    template += 'sites/' + team.template_dir + '/'
+    items = Item.objects.filter(team=team)
+
+    args={}
+    args['site_name'] = team.template_dir
+    args['team'] = team
+    args['items'] = items
+    return render(request, template+'showcase.html', args)
+
+def contact(request, site_name=None):
+    template = 'templates/'
+    
+    if site_name:
+        try:
+            current_site = Site.objects.get(name=site_name)
+        except Site.DoesNotExist:
+            return HttpResponseRedirect('/')
+    else:
+        current_site = get_current_site(request)
+
+    team = Team.objects.get(site=current_site)
+    template += 'sites/' + team.template_dir + '/'    
+
+    args={}
+    args['site_name'] = team.template_dir
+    args['team'] = team
+    return render(request, template+'contact.html', args)
+
+def contact_us(request):
+    return render(request, 'templates/contact_us.html')
+
+# def services(request):
 #     return render(request, 'templates/services.html')
 
 def auth_view(request):

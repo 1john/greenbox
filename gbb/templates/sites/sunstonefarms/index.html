@@ -1,0 +1,58 @@
+{% extends "templates/sites/sunstonefarms/sunstonebase.html" %}
+{% block content %}
+<!-- BANNER -->
+<section class="jumbotron text-center">
+	<div class="container">
+		<h1 class="jumbotron-heading">Sunstone Farms</h1>
+		<div class="row">
+			<div class="col-sm-6 col-centered">
+				<p class="lead text-muted">Pot is Tight
+				</p>
+			</div>
+		</div>
+		<p>
+			<a href="/showcase/{{ site_name }}" class="btn btn-lg btn-warning">Show me!</a>
+			<a href="/contact/{{ site_name }}" class="btn btn-lg btn-warning">I want some!</a>
+		</p>
+	</div>
+</section>
+
+<!-- MAIN CONTENT -->
+<div clas"container-fluid">
+	<!-- ABOUT US -->
+	<div class="row">
+		<div class="col-4">
+
+		</div>
+		<div class="col-8">
+
+		</div>
+	</div>
+	<!-- SHOWCASE -->
+	<div class="row">
+		<div class="col-4">
+
+		</div>
+		<div class="col-8">
+
+		</div>
+	<!-- CONTACT US -->
+	</div>
+	<div class="row">
+		<div class="col-8">
+
+		</div>
+		<div class="col-4">
+
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+  function activeNav(){
+    document.getElementById("home-nav-container").className += "active";
+  }
+  window.onload = activeNav;
+</script>
+{% endblock %}

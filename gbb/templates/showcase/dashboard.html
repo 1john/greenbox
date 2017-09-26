@@ -7,18 +7,16 @@
       <h1 class="bd-featurette-title">Dashboard</h1>
       <p class="bd-lead">Here you can create, edit, and delete items in your showcase</p>
   </div>
-  <a id="create-new-item-button" href="/item/" class="btn btn-success btn-lg">Create New</a>
+  <a id="create-new-item-button" href="/item/" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> Create New</a>
   {% for item in items %}
     <div class="row">
       <div class="col-sm-6 mb-3">
-        <img src="{{item.img_url}}" height="256" width="256">
+        <img src="{{item.img_url}}" class="img-responsive"height="256" width="256">
       </div>
-      <div class="col-sm-6 mb-3">
-        <h3>{{ item.name }}</h3>
-        <p>{{ item.description }}</p>
-        <a href="/item/{{item.id}}" class="btn btn-success btn-lg">Edit</a>
-        <a href="/delete/{{item.id}}" class="btn btn-success btn-lg">Delete</a>
-      </div>
+      <h3>{{ item.name }}</h3>
+      <p>{{ item.description }}</p>
+      <a href="/item/{{item.id}}" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-wrench"></span> Edit</a>
+      <a href="/delete/{{item.id}}" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-remove"></span> Delete</a>
     </div>
   {% endfor %}
 </div>

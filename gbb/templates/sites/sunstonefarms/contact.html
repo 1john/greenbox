@@ -1,0 +1,29 @@
+{% extends "templates/sites/sunstonefarms/sunstonebase.html" %}
+{% block content %}
+<section class="jumbotron text-center">
+	<div class="container">
+		<h1 class="jumbotron-heading">Get in Touch</h1>
+		<div class="row">
+			<div class="col-sm-6 col-centered">
+				<p class="lead text-muted">Whether you're looking to make an order or learn more about our products and practice, feel free to reach out. Below are some options.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-5 col-centered">
+			<h2><strong>{{team.name}}</strong></h2>
+			<h3><strong>Email: </strong>{{team.user.email}}</h3>
+			<h3><strong>Phone: </strong>{{team.phone_number|slice:"0:3"}}-{{team.phone_number|slice:"3:6"}}-{{team.phone_number|slice:"6:10"}}</h3>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+  function activeNav(){
+    document.getElementById("contact-nav-container").className += "active";
+  }
+  window.onload = activeNav;
+</script>
+{% endblock %}

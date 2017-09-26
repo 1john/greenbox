@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'showcase',
     'widget_tweaks',
+    'showcase',
+    'sunstonefarms',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,5 @@ STATIC_ROOT = 'static'
 
 # Sites Framework
 SITE_ID = 1
+
+AWS_S3_HOST = 's3-us-west-2.amazonaws.com'
