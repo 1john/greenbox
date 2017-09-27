@@ -1,12 +1,13 @@
 {% extends "templates/sites/sunstonefarms/sunstonebase.html" %}
+{% load static %}
 {% block content %}
 <!-- BANNER -->
 <section class="jumbotron text-center">
 	<div class="container">
-		<h1 class="jumbotron-heading">Sunstone Farms</h1>
+		<h1 class="jumbotron-heading">Pot is Tight</h1>
 		<div class="row">
 			<div class="col-sm-6 col-centered">
-				<p class="lead text-muted">Pot is Tight
+				<p class="lead text-muted">Especially the stuff we grow.
 				</p>
 			</div>
 		</div>
@@ -18,32 +19,32 @@
 </section>
 
 <!-- MAIN CONTENT -->
-<div clas"container-fluid">
+<div class="container">
 	<!-- ABOUT US -->
 	<div class="row">
 		<div class="col-4">
-
+			<img src="{% static '/img/item_img_placeholder.png' %}" height="300" width="250">
 		</div>
-		<div class="col-8">
-
+		<div class="col-6">
+			<p>this is the first topic</p>
 		</div>
 	</div>
 	<!-- SHOWCASE -->
 	<div class="row">
-		<div class="col-4">
-
-		</div>
 		<div class="col-8">
-
+			<p>this is the second topic</p>
 		</div>
-	<!-- CONTACT US -->
+		<div class="col-4">
+			<img src="{% static '/img/item_img_placeholder.png' %}" height="300" width="250">
+		</div>
 	</div>
+	<!-- CONTACT US -->
 	<div class="row">
-		<div class="col-8">
-
-		</div>
 		<div class="col-4">
-
+			<img src="{% static '/img/item_img_placeholder.png' %}" height="300" width="250">
+		</div>
+		<div class="col-8">
+			<p>this is the third topic</p>
 		</div>
 	</div>
 </div>
