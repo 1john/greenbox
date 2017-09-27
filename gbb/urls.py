@@ -17,7 +17,6 @@ from django.conf.urls import url
 from django.contrib import admin
 import views
 from showcase import views as showcaseviews
-#serving static files for development
 from django.conf import settings
 from django.conf.urls.static import static
 
