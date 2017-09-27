@@ -26,7 +26,7 @@
 <body class="body">
   <div class="navigation-bar w-nav" data-animation="default" data-collapse="medium" data-duration="400">
     <div class="container">
-    	<a class="brand-link w-nav-brand" href="/sites/{{site_name}}.html"><img src="images/SunstoneFarmsLogohorizontal.svg" width="197"></a>
+    	<a class="brand-link w-nav-brand" href="/sites/{{site_name}}.html"><img src="{% static 'images/SunstoneFarmsLogohorizontal.svg' %}" width="197"></a>
       	<nav class="navigation-menu w-nav-menu" role="navigation">
       		<a class="navigation-link w-nav-link" href="/sites/{{site_name}}">Home</a>
       		<a class="navigation-link w-nav-link" href="/showcase/{{site_name}}">Showcase</a>
@@ -47,25 +47,25 @@
   </div>
   <div class="section">
     <div class="w-container">
-      <div class="section-title-group"><img class="image" src="images/GraphicLogo.svg" width="101.5">
+      <div class="section-title-group"><img class="image" src="{% static 'images/GraphicLogo.svg' %}" width="101.5">
         <h2 class="centered section-heading">Sunstone Farms</h2>
         <div class="center section-subheading">Learn more about who we are and what we do</div>
       </div>
       <div class="w-row">
         <div class="w-col w-col-4">
-          <div class="white-box"><img class="grid-image" src="images/feather-15-white.svg">
+          <div class="white-box"><img class="grid-image" src="{% static 'images/feather-15-white.svg' %}">
             <h3 class="heading">About Us</h3>
             <p class="paragraph">Irony forage tofu, portland swag vape seitan. Four dollar toast truffaut asymmetrical trust fund meh roof party.</p>
           </div>
         </div>
         <div class="w-col w-col-4">
-          <div class="white-box"><img class="grid-image" src="images/feather2-17-white.svg" width="210">
+          <div class="white-box"><img class="grid-image" src="{% static 'images/feather2-17-white.svg' %}" width="210">
             <h3 class="heading">Our Products</h3>
             <p class="paragraph">Irony forage tofu, portland swag vape seitan. Four dollar toast truffaut asymmetrical trust fund meh roof party.</p>
           </div>
         </div>
         <div class="w-col w-col-4">
-          <div class="white-box"><img class="grid-image" src="images/feather2-22-white.svg">
+          <div class="white-box"><img class="grid-image" src="{% static 'images/feather2-22-white.svg' %}">
             <h3 class="heading">Get In Touch</h3>
             <p class="paragraph">Irony forage tofu, portland swag vape seitan. Four dollar toast truffaut asymmetrical trust fund meh roof party.</p>
           </div>
@@ -81,12 +81,12 @@
       </div>
       <div class="w-row">
         <div class="w-col w-col-6">
-          <div class="transparent white-box"><img class="fullwidth-image" sizes="(max-width: 479px) 85vw, (max-width: 767px) 88vw, (max-width: 991px) 324px, 430px" src="images/city-scape.jpg" srcset="images/city-scape-p-500x334.jpeg 500w, images/city-scape-p-1080x721.jpeg 1080w, images/city-scape.jpg 1300w">
+          <div class="transparent white-box"><img class="fullwidth-image" sizes="(max-width: 479px) 85vw, (max-width: 767px) 88vw, (max-width: 991px) 324px, 430px" src="{% static 'images/city-scape.jpg' %}" srcset="{% static 'images/city-scape-p-500x334.jpeg' %} 500w, {% static 'images/city-scape-p-1080x721.jpeg' %} 1080w, images/city-scape.jpg 1300w">
             <h3 class="white-text">SERVICES one</h3>
             <p class="white-text">Tacos mixtape literally chillwave food truck organic. Gluten-free yr 3 wolf moon whatever tumeric offal normcore lyft four dollar toast. Kinfolk schlitz disrupt woke intelligentsia godard selfies blue.</p><a class="hollow-button" href="#">Learn more</a></div>
         </div>
         <div class="w-col w-col-6">
-          <div class="transparent white-box"><img class="fullwidth-image" sizes="(max-width: 479px) 85vw, (max-width: 767px) 88vw, (max-width: 991px) 324px, 430px" src="images/photo-1416400639808-f41f0c149b09.jpg" srcset="images/photo-1416400639808-f41f0c149b09-p-1080x721.jpeg 1080w, images/photo-1416400639808-f41f0c149b09.jpg 1300w">
+          <div class="transparent white-box"><img class="fullwidth-image" sizes="(max-width: 479px) 85vw, (max-width: 767px) 88vw, (max-width: 991px) 324px, 430px" src="{% static 'images/photo-1416400639808-f41f0c149b09.jpg' %}" srcset="{% static 'images/photo-1416400639808-f41f0c149b09-p-1080x721.jpeg' %} 1080w, {% static 'images/photo-1416400639808-f41f0c149b09.jpg' %} 1300w">
             <h3 class="white-text">SERVICES two</h3>
             <p class="white-text">Tacos mixtape literally chillwave food truck organic. Gluten-free yr 3 wolf moon whatever tumeric offal normcore lyft four dollar toast. Kinfolk schlitz disrupt woke intelligentsia godard selfies blue.</p><a class="all-caps hollow-button" href="#">Learn more</a></div>
         </div>
@@ -113,19 +113,19 @@
         </div>
         <div class="w-tab-content">
           <div class="w--tab-active w-tab-pane" data-w-tab="Tab 1">
-            <div><img class="fullwidth-image" sizes="(max-width: 767px) 96vw, (max-width: 991px) 728px, 940px" src="images/photo-1422222948315-28aadb7a2cb8.jpg" srcset="images/photo-1422222948315-28aadb7a2cb8-p-1080x721.jpeg 1080w, images/photo-1422222948315-28aadb7a2cb8.jpg 1300w">
+            <div><img class="fullwidth-image" sizes="(max-width: 767px) 96vw, (max-width: 991px) 728px, 940px" src="{% static 'images/photo-1422222948315-28aadb7a2cb8.jpg' %}" srcset="{% static 'images/photo-1422222948315-28aadb7a2cb8-p-1080x721.jpeg' %} 1080w, {% static 'images/photo-1422222948315-28aadb7a2cb8.jpg' %} 1300w">
               <h2 class="heading-2">Some Title Here</h2>
               <p class="paragraph-2">Normcore jianbing polaroid sartorial. Flannel mumblecore mlkshk pitchfork, brooklyn bushwick migas.<br>Bicycle rights lomo shaman +1 raw denim truffaut leggings artisan. Chartreuse beard taiyaki readymade synth kinfolk vinyl messenger bag. Waistcoat fixie tbh messenger bag, ethical meggings tattooed blue bottle fingerstache taiyaki retro heirloom.</p>
             </div>
           </div>
           <div class="w-tab-pane" data-w-tab="Tab 2">
-            <div><img class="fullwidth-image" sizes="(max-width: 767px) 96vw, (max-width: 991px) 728px, 940px" src="images/5fcb0a55.jpg" srcset="images/5fcb0a55-p-500x334.jpeg 500w, images/5fcb0a55.jpg 1300w">
+            <div><img class="fullwidth-image" sizes="(max-width: 767px) 96vw, (max-width: 991px) 728px, 940px" src="{% static 'images/5fcb0a55.jpg' %}" srcset="{% static 'images/5fcb0a55-p-500x334.jpeg' %} 500w, {% static 'images/5fcb0a55.jpg' %} 1300w">
               <h2>Heading</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. <br>Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.<br>Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
             </div>
           </div>
           <div class="w-tab-pane" data-w-tab="Tab 3">
-            <div><img class="fullwidth-image" sizes="(max-width: 767px) 96vw, (max-width: 991px) 728px, 940px" src="images/5cf8b62b.jpg" srcset="images/5cf8b62b-p-500x333.jpeg 500w, images/5cf8b62b-p-800x532.jpeg 800w, images/5cf8b62b-p-1080x718.jpeg 1080w, images/5cf8b62b.jpg 1300w">
+            <div><img class="fullwidth-image" sizes="(max-width: 767px) 96vw, (max-width: 991px) 728px, 940px" src="{% static 'images/5cf8b62b.jpg' %}" srcset="{% static 'images/5cf8b62b-p-500x333.jpeg' %} 500w, {% static 'images/5cf8b62b-p-800x532.jpeg' %} 800w, {% static 'images/5cf8b62b-p-1080x718.jpeg' %} 1080w, {% static 'images/5cf8b62b.jpg' %} 1300w">
               <h2>Heading</h2>
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. <br>Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. <br>Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
