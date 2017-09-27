@@ -1,5 +1,3 @@
-  <link rel="stylesheet" href="{% static '/css/sunstone_style.css' %}">
-
  <!DOCTYPE html>
 <!--  This site was created in Webflow. http://www.webflow.com -->
 <!--  Last Published: Wed Sep 27 2017 01:10:31 GMT+0000 (UTC)  -->
@@ -27,8 +25,14 @@
 </head>
 <body class="body">
   <div class="navigation-bar w-nav" data-animation="default" data-collapse="medium" data-duration="400">
-    <div class="container"><a class="brand-link w-nav-brand" href="index.html"><img src="images/SunstoneFarmsLogohorizontal.svg" width="197"></a>
-      <nav class="navigation-menu w-nav-menu" role="navigation"><a class="navigation-link w-nav-link" href="index.html">Home</a><a class="navigation-link w-nav-link" href="#">Showcase</a><a class="navigation-link w-nav-link" href="#">About Us</a><a class="navigation-link w-nav-link" href="contact.html">Contact</a></nav>
+    <div class="container">
+    	<a class="brand-link w-nav-brand" href="index.html"><img src="images/SunstoneFarmsLogohorizontal.svg" width="197"></a>
+      	<nav class="navigation-menu w-nav-menu" role="navigation">
+      		<a class="navigation-link w-nav-link" href="/">Home</a>
+      		<a class="navigation-link w-nav-link" href="/showcase/{{site_name}}">Showcase</a>
+      		<a class="navigation-link w-nav-link" href="/about/{{site_name}}">About Us</a>
+      		<a class="navigation-link w-nav-link" href="/contact/{{site_name}}">Contact</a>
+      	</nav>
       <div class="hamburger-button w-nav-button">
         <div class="icon w-icon-nav-menu"></div>
       </div>
