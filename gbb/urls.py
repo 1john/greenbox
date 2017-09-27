@@ -40,6 +40,8 @@ urlpatterns = [
     url(r'^sites/(?P<site_name>[-\w]+)/$', views.home, name="home"),
     url(r'^showcase/$', views.showcase, name="showcase"),
     url(r'^showcase/(?P<site_name>[-\w]+)/$', views.showcase, name="showcase"),
+    url(r'^about/$', views.about, name="about"),
+    url(r'^about/(?P<site_name>[-\w]+)/$', views.about, name="about"),
     url(r'^contact/$', views.contact, name="contact"),
     url(r'^contact/(?P<site_name>[-\w]+)/$', views.contact, name="contact"),
 

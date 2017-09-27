@@ -34,7 +34,6 @@ def home(request, site_name=None):
     except Team.DoesNotExist:
         return render(request, 'templates/index.html')
 
-
 def showcase(request, site_name=None):
     template = 'templates/'
     
@@ -58,6 +57,29 @@ def showcase(request, site_name=None):
     args['team'] = team
     args['items'] = items
     return render(request, template+'showcase.html', args)
+
+def about(request, site_name=None):
+    template = 'templates/'
+    
+    if site_name:
+        try:
+            current_site = Site.objects.get(name=site_name)
+        except Site.DoesNotExist:
+            return HttpResponseRedirect('/')
+    else:
+        try:
+            current_site = get_current_site(request)
+        except Site.DoesNotExist:
+            return HttpResponseRedirect('/')
+    
+    team = Team.objects.get(site=current_site)
+    template += 'sites/' + team.template_dir + '/'
+    items = Item.objects.filter(team=team)
+
+    args={}
+    args['site_name'] = team.template_dir
+    args['team'] = team
+    return render(request, template+'about.html', args)
 
 def contact(request, site_name=None):
     template = 'templates/'
