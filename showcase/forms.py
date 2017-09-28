@@ -51,7 +51,7 @@ class ItemForm(forms.ModelForm):
     class Meta:
         model = Item
         fields = ('name', 'description', 'img_url')
-        exclude = ['team']
+        exclude = ['team', 'thumbnail']
 
     name = forms.CharField(max_length=128, widget=forms.TextInput(attrs={'id':'name'})),
     description = forms.CharField(max_length=4096, widget=forms.TextInput(attrs={'id':'description'})),

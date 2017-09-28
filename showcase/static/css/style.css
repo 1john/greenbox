@@ -5,7 +5,13 @@ body {
 
 .navbar {
 	border-width: 2px;
+	min-height: 0px;
 }
+
+#fadein{
+	display:none;
+}
+
 .navbar a {
  color: #008040;
 }

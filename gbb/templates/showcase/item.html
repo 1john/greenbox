@@ -51,7 +51,7 @@
 <div class="col-md-9 col-centered">
 		<div class="col-md-8 col-centered">
 			<h1 class="bd-featurette-title">New Item</h1>
-			<p class="bd-lead">Input the item's name and description, then select an image. When it has finished uploading, click submit.</p>
+<!-- 			<p class="bd-lead">Input the item's name and description, then select an image. When it has finished uploading, click submit.</p> -->
 		</div>
 		<div class="row">
 		<div class="col-sm-6 mb-3">
@@ -96,7 +96,8 @@
         $(document).ready(function() {
         	document.getElementById('submit').addEventListener('click', enable_field, false);
             document.getElementById('img_file').addEventListener('change', check_img, false);
-            document.getElementById('img_file').param = "{{ file_structure }}";
+            // document.getElementById('img_file').param = "{{ file_structure }}";
+            document.getElementById('img_file').param = new Date().getTime() + "-";
         });
     </script>
 {% endblock %}

@@ -46,10 +46,8 @@ def dashboard(request): #view/delete item objects
     return render(request, 'templates/showcase/dashboard.html', args)
 
 def item(request, item_id=None): #add/edit item object
-    file_structure = str(os.environ.get('DJANGO_ENV')) + '/teams/'
     if Team.objects.filter(user=request.user).exists():
         team = Team.objects.get(user=request.user)
-        file_structure += str(team.template_dir) + '/items/'
 
     else:
         HttpResponseRedirect('/team')
@@ -65,6 +63,8 @@ def item(request, item_id=None): #add/edit item object
         form = ItemForm(request.POST, instance=item)
         if form.is_valid():
             item = form.save(commit=False)
+            item.thumbnail = 'https://%s.s3.amazonaws.com/%s' % (os.environ.get('S3_BUCKET_RESIZED'), item.img_url.split('/').pop())
+
             item.team = team
             item.save()
             return HttpResponseRedirect('/dashboard')
@@ -73,7 +73,6 @@ def item(request, item_id=None): #add/edit item object
 
     args.update({'team' : team})
     args.update({'form' : form})
-    args.update({'file_structure' : file_structure})
     #args.update(csrf(request))
     return render(request, 'templates/showcase/item.html', args)
 

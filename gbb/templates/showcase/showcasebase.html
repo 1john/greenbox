@@ -15,6 +15,7 @@
 <body>
 
 <!-- NAV BAR -->
+<div id="fadein">
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -36,6 +37,11 @@
     </div>
   </div>
 </nav>
+<!-- END NAVBAR -->
+
+{% block content %}
+{% endblock %}
+
 <script type="text/javascript">
   //Stack menu when collapsed
   $('#myNavbar').on('show.bs.collapse', function() {
@@ -47,10 +53,12 @@
       $('.nav-pills').removeClass('nav-stacked');
   });
 </script>
-<!-- END NAVBAR -->
 
-{% block content %}
-{% endblock %}
-
+<!--FADE IN NAVBAR -->
+<script>
+$(document).ready(function(){
+    $('#fadein').fadeIn(500);
+});
+</script>
 </body>
 </html>

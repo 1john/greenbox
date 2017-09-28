@@ -24,6 +24,7 @@ class Item(models.Model):
     team = models.ForeignKey(Team)
     name = models.CharField(max_length=128)
     img_url = models.CharField(max_length=128)
+    thumbnail = models.CharField(max_length=128, blank=True)
     description = models.CharField(max_length=4096, blank=True)
 
     def __str__(self): #how it shows up in django admin

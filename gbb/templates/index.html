@@ -1,6 +1,6 @@
 {% extends "templates/base.html" %}
 {% block content %}
-
+<div id="body-fadein">
 <div class="container">
   <div class="col-md-8 col-centered">
     <h1 class="bd-featurette-title">GreenBox Branding</h1>
@@ -8,11 +8,14 @@
   </div>
   </div>
 </div>
+</div>
 
+<!-- ACTIVE LINK -->
 <script type="text/javascript">
   function activeNav(){
     document.getElementById("home-nav-container").className += "active";
   }
   window.onload = activeNav;
 </script>
+
 {% endblock %}
