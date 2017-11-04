@@ -32,7 +32,7 @@
     <div class="section-title-group">
       <h2 class="centered section-heading">Inventory</h2>
       <div class="center section-subheading">Check out what we&#x27;ve got to offer...</div>
-      <p class="paragraph-6">Updated regularly with new products and lab results. Get in touch to learn more or request an order.</p>
+      <p class="paragraph-6"><strong>Updated regularly with new products and lab results. Get in touch to learn more or request an order.</strong></p>
     </div>
 
     <div class="showcasediv">
@@ -51,88 +51,29 @@
       "fileSize": 369705
     }
   ]
-}</script></a>
-        <h4 class="itemname">Cannatonic</h4>
-        <p class="itemdescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+}
+</script></a>
+{% for item in items %}
+        <h4 class="itemname">{{ item.name }}</h4>
+        <p class="itemdescription">{{ item.description }}</p>
       </div>
-      <div class="itemdiv"><a href="#" class="lightbox-link w-inline-block w-lightbox"><img src="{% static 'images/CriticalMass.jpg' %}"><script type="application/json" class="w-json">{
+      <div class="itemdiv"><a href="#" class="lightbox-link w-inline-block w-lightbox"><img src="{{ item.thumbnail }}"><script type="application/json" class="w-json">{
   "group": "Showcase",
   "items": [
     {
       "width": 2701,
-      "caption": "Critical Mass",
+      "caption": "{{ item.name }}",
       "height": 1801,
-      "fileName": "59cef8e2fb0edc0001b48784_CriticalMass.jpg",
-      "origFileName": "CriticalMass.jpg",
-      "url": "images/CriticalMass.jpg",
+      "fileName": "{{ item.img_url }}",
+      "origFileName": "{{ item.img_url }}",
+      "url": "{{ item.img_url }}",
       "_id": "59cef8e2fb0edc0001b48784",
       "type": "image",
       "fileSize": 490702
     }
   ]
 }</script></a>
-        <h4 class="itemname">Critical Mass</h4>
-        <p class="itemdescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-      </div>
-      <div class="itemdiv"><a href="#" class="lightbox-link w-inline-block w-lightbox"><img src="{% static 'images/Concord-Kush.jpg' %}"><script type="application/json" class="w-json">{
-  "group": "Showcase",
-  "items": [
-    {
-      "width": 2566,
-      "caption": "Concord Kush",
-      "height": 1711,
-      "fileName": "59cef8e1a992ae00015eb87d_Concord-Kush.jpg",
-      "origFileName": "Concord-Kush.jpg",
-      "url": "images/Concord-Kush.jpg",
-      "_id": "59cef8e1a992ae00015eb87d",
-      "type": "image",
-      "fileSize": 370057
-    }
-  ]
-}</script></a>
-        <h4 class="itemname">Concord Kush</h4>
-        <p class="itemdescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-      </div>
-      <div class="itemdiv"><a href="#" class="lightbox-link w-inline-block w-lightbox"><img src="{% static 'images/Concord-Kush.jpg' %}"><script type="application/json" class="w-json">{
-  "group": "Showcase",
-  "items": [
-    {
-      "width": 2566,
-      "caption": "Concord Kush",
-      "height": 1711,
-      "fileName": "59cef8e1a992ae00015eb87d_Concord-Kush.jpg",
-      "origFileName": "Concord-Kush.jpg",
-      "url": "images/Concord-Kush.jpg",
-      "_id": "59cef8e1a992ae00015eb87d",
-      "type": "image",
-      "fileSize": 370057
-    }
-  ]
-}</script></a>
-        <h4 class="itemname">Concord Kush</h4>
-        <p class="itemdescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-      </div>
-      <div class="itemdiv"><a href="#" class="lightbox-link w-inline-block w-lightbox"><img src="{% static 'images/Cannatonic.JPG' %}"><script type="application/json" class="w-json">{
-  "group": "Showcase",
-  "items": [
-    {
-      "width": 2481,
-      "caption": "Cannatonic",
-      "height": 1654,
-      "fileName": "59cef8e2fec7fc0001d687d0_Cannatonic.JPG",
-      "origFileName": "Cannatonic.JPG",
-      "url": "images/Cannatonic.JPG",
-      "_id": "59cef8e2fec7fc0001d687d0",
-      "type": "image",
-      "fileSize": 369705
-    }
-  ]
-}</script></a>
-        <h4 class="itemname">Cannatonic</h4>
-        <p class="itemdescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-      </div>
-    </div>
-  </div>
+{% endfor %}
   <div class="footer">
     <div class="w-container">
       <div class="w-row">
