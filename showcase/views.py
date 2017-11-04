@@ -42,6 +42,7 @@ def dashboard(request): #view/delete item objects
         HttpResponseRedirect('/team')
 
     items = Item.objects.filter(team=team)
+    items = items[::-1]
     args = {'team' : team, 'items' : items}
     return render(request, 'templates/showcase/dashboard.html', args)
 

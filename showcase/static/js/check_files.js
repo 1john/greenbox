@@ -18,11 +18,11 @@ function check_img(e){
         var sFileName = e.target.param + file.name
 
         var iFileSize = file.size;
-        var iConvert = (file.size / 10485760).toFixed(2);
-        if (iFileSize > 10485760) {
+        var iConvert = (file.size / 2147483648).toFixed(2);
+        if (iFileSize > 2147483648) {
             txt = "File type : " + sFileExtension + "\n\n";
             txt += "Size: " + iConvert + " MB \n\n";
-            txt += "Please make sure your file is less than 10 MB.\n\n";
+            txt += "Please make sure your file is less than 20 MB.\n\n";
             alert(txt);
         } else if ( (sFileExtension != "png")
             && (sFileExtension != "jpg")

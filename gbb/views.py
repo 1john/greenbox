@@ -27,9 +27,12 @@ def home(request, site_name=None):
     try:
         team = Team.objects.get(site=current_site)
         template += 'sites/' + team.template_dir + '/'
-        
+        items = Item.objects.filter(team=team)[0:4]
+        items = items[::-1]
+
         args['site_name'] = team.template_dir
         args['team'] = team
+        args['highlights'] = items
         return render(request, template+'index.html', args)
     
     except Team.DoesNotExist:
@@ -52,7 +55,8 @@ def showcase(request, site_name=None):
     team = Team.objects.get(site=current_site)
     template += 'sites/' + team.template_dir + '/'
     items = Item.objects.filter(team=team)
-
+    items = items[::-1]
+    
     args={}
     args['site_name'] = team.template_dir
     args['team'] = team

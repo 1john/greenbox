@@ -1,0 +1,11 @@
+.myslider{
+	max-width:1000px;
+	margin: 0 auto;
+	padding-bottom:30px;
+}
+.myslider img {
+  height: 200px;
+}
+.highlights {
+	background-color:#192024;
+}
