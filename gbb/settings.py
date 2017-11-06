@@ -27,7 +27,10 @@ SECRET_KEY = '$2!ik4e@)$g5bvp_*dy2yi7-e3oi)b=f_nx@wl8z$-%bn3mst*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'greenbox-branding.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0',
+                'greenbox-branding.herokuapp.com',
+                'greenboxbranding.com'
+                ]
 
 
 # Application definition
