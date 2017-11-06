@@ -22,7 +22,11 @@
 <body class="body-2">
   <div data-collapse="medium" data-animation="default" data-duration="400" class="navigation-bar w-nav">
     <div class="container"><a href="index.html" class="brand-link w-nav-brand"><img src="{% static 'images/SunstoneFarmsLogohorizontal.svg' %}" width="201"></a>
-      <nav role="navigation" class="navigation-menu w-nav-menu"><a href="/" class="navigation-link w-nav-link">Home</a><a href="/about/{{site_name}}" class="navigation-link w-nav-link">About Us</a><a href="/showcase/{{site_name}}" class="navigation-link w-nav-link w--current">Inventory</a><a href="/contact/{{site_name}}" class="navigation-link w-nav-link">Contact</a></nav>
+      <nav role="navigation" class="navigation-menu w-nav-menu">
+        <a href="/" class="navigation-link w-nav-link">Home</a>
+<!--         <a href="/about/{{site_name}}" class="navigation-link w-nav-link">About Us</a> -->
+        <a href="/showcase/{{site_name}}" class="navigation-link w-nav-link w--current">Inventory</a><a href="/contact/{{site_name}}" class="navigation-link w-nav-link">Contact</a>
+      </nav>
       <div class="hamburger-button w-nav-button">
         <div class="icon w-icon-nav-menu"></div>
       </div>
@@ -34,63 +38,51 @@
       <div class="center section-subheading">Check out what we&#x27;ve got to offer...</div>
       <p class="paragraph-6"><strong>Updated regularly with new products and lab results. Get in touch to learn more or request an order.</strong></p>
     </div>
-
-    <div class="showcasediv">
-      <div class="itemdiv"><a href="#" class="lightbox-link w-inline-block w-lightbox"><img src="{% static 'images/Cannatonic.JPG' %}"><script type="application/json" class="w-json">{
-  "group": "Showcase",
-  "items": [
-    {
-      "width": 2481,
-      "caption": "Cannatonic",
-      "height": 1654,
-      "fileName": "59cef8e2fec7fc0001d687d0_Cannatonic.JPG",
-      "origFileName": "Cannatonic.JPG",
-      "url": "images/Cannatonic.JPG",
-      "_id": "59cef8e2fec7fc0001d687d0",
-      "type": "image",
-      "fileSize": 369705
-    }
-  ]
-}
-</script></a>
+<div class="showcasediv">
 {% for item in items %}
-        <h4 class="itemname">{{ item.name }}</h4>
-        <p class="itemdescription">{{ item.description }}</p>
-      </div>
-      <div class="itemdiv"><a href="#" class="lightbox-link w-inline-block w-lightbox"><img src="{{ item.thumbnail }}"><script type="application/json" class="w-json">{
-  "group": "Showcase",
-  "items": [
-    {
-      "width": 2701,
-      "caption": "{{ item.name }}",
-      "height": 1801,
-      "fileName": "{{ item.img_url }}",
-      "origFileName": "{{ item.img_url }}",
-      "url": "{{ item.img_url }}",
-      "_id": "59cef8e2fb0edc0001b48784",
-      "type": "image",
-      "fileSize": 490702
-    }
-  ]
-}</script></a>
+    <div class="itemdiv">
+      <a href="#" class="lightbox-link w-inline-block w-lightbox">
+        <img src="{{ item.thumbnail }}">
+        <script type="application/json" class="w-json">{
+        "group": "Showcase",
+        "items": [
+          {
+            "width": 2701,
+            "caption": "{{ item.name }}",
+            "height": 1801,
+            "fileName": "{{ item.img_url }}",
+            "origFileName": "{{ item.img_url }}",
+            "url": "{{ item.img_url }}",
+            "_id": "59cef8e2fb0edc0001b48784",
+            "type": "image",
+            "fileSize": 490702
+          }]}
+        </script>
+      </a>
+    <h4 class="itemname">{{ item.name }}</h4>
+    <p class="itemdescription">{{ item.description }}</p>
+  </div>
 {% endfor %}
-  <div class="footer">
+  </div>
+</div>
+
+ <div class="footer">
     <div class="w-container">
       <div class="w-row">
-        <div class="spc w-col w-col-4">
-          <h5 class="heading-3">about velocity</h5>
-          <p class="paragraph-3">Biodiesel art party before they sold out stumptown letterpress freegan enamel pin green juice kinfolk squid activated charcoal fanny pack VHS 90&#x27;s. Ethical distillery chicharrones schlitz.</p>
+        <div class="spc w-col w-col-12">
+          <h5 class="heading-3">Powered by Greenbox</h5>
+          <p class="paragraph-3">This website was created by Greenbox Branding Inc. A branding company geared towards the marijuana industry, based out of Eugene, Oregon. We handle a range of branding needs include photography, design, and web development. Visit our website <a href="www.greenboxbranding.com">here</a>.</p>
         </div>
-        <div class="spc w-col w-col-4">
-          <h5 class="heading-4">useful links</h5><a href="#" class="footer-link">Phasellus gravida semper nisi</a><a href="#" class="footer-link">Suspendisse nisl elit</a><a href="#" class="footer-link">Dellentesque habitant morbi</a><a href="#" class="footer-link">Etiam sollicitudin ipsum</a></div>
-        <div class="w-col w-col-4">
+<!--         <div class="spc w-col w-col-4">
+          <h5 class="heading-4">useful links</h5><a href="#" class="footer-link">Phasellus gravida semper nisi</a><a href="#" class="footer-link">Suspendisse nisl elit</a><a href="#" class="footer-link">Dellentesque habitant morbi</a><a href="#" class="footer-link">Etiam sollicitudin ipsum</a></div> -->
+<!--         <div class="w-col w-col-4">
           <h5 class="heading-5">social</h5>
           <div class="footer-link-wrapper w-clearfix"><img src="{% static 'images/social-18.svg' %}" width="20" class="info-icon"><a href="#" class="footer-link with-icon">Twitter</a></div>
           <div class="footer-link-wrapper w-clearfix"><img src="{% static 'images/social-03.svg' %}" width="20" class="info-icon"><a href="#" class="footer-link with-icon">Facebook</a></div>
           <div class="footer-link-wrapper w-clearfix"><img src="{% static 'images/social-11.svg' %}" width="20" class="info-icon"><a href="#" class="footer-link with-icon">Pinterest</a></div>
           <div class="footer-link-wrapper w-clearfix"><img src="{% static 'images/social-06.svg' %}" width="20" class="info-icon"><a href="#" class="footer-link with-icon">Google</a></div>
           <div class="footer-link-wrapper w-clearfix"><img src="{% static 'images/social-12.svg' %}" width="20" class="info-icon"><a href="#" class="footer-link with-icon">Webflow</a></div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
