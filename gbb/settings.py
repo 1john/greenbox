@@ -29,7 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0',
                 'greenbox-branding.herokuapp.com',
-                'greenboxbranding.com'
+                'greenboxbranding.com',
+                'www.greenboxbranding.com'
                 ]
 
 
