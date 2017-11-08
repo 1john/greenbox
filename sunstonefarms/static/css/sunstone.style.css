@@ -9,3 +9,7 @@
 .highlights {
 	background-color:#192024;
 }
+.wrapper{
+	min-height: 100%;
+	position: relative;
+}
