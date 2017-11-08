@@ -9,7 +9,6 @@ from django.contrib.sites.models import Site
 
 
 def home(request, site_name=None):
-    print 'does this work'
     template = 'templates/'
     args = {}
 

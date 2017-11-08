@@ -12,4 +12,25 @@
 .wrapper{
 	min-height: 100%;
 	position: relative;
+	padding-bottom:205px;
+}
+
+.footer-wrap{
+	position:absolute;
+	bottom:0;
+	width:100%;
+	left:0;
+	max-height:205px;
+}
+
+html, body {
+	height:100%;
+	background-color:white;
+}
+
+.contact-section{
+	height:100%;
+}
+.myfooter{
+	background-color:#edeff2;
 }
