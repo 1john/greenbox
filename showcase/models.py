@@ -22,10 +22,15 @@ class Team(models.Model):
 
 class Item(models.Model):
     team = models.ForeignKey(Team)
+    
     name = models.CharField(max_length=128)
-    img_url = models.CharField(max_length=128)
-    thumbnail = models.CharField(max_length=128, blank=True)
+    genetics = models.CharField(max_length=256, blank=True)
+    cannabinoids = models.CharField(max_length=256, blank=True)
+    terpenes = models.CharField(max_length=256, blank=True)
     description = models.CharField(max_length=4096, blank=True)
-
+    
+    img_url = models.CharField(max_length=256)
+    thumbnail = models.CharField(max_length=256, blank=True)
+    
     def __str__(self): #how it shows up in django admin
         return self.team.name + ' : ' + self.name 

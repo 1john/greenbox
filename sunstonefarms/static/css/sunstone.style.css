@@ -42,3 +42,7 @@ html, body {
 a.no-underline{
 	text-decoration:none;
 }
+.itemdescription{
+	padding-left: 7%;
+	text-align:left;
+}

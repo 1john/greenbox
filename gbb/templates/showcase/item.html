@@ -23,6 +23,18 @@
 			    	<label for="name" class="col-2 col-form-label">Name</label>
 		    		{% render_field form.name class="form-control" %}
 			    </div>
+			    <div class="form-group">
+			    	<label for="genetics" class="col-2 col-form-label">Genetics</label>
+		    		{% render_field form.genetics class="form-control" %}
+			    </div>
+			    <div class="form-group">
+			    	<label for="cannabiniods" class="col-2 col-form-label">Cannabiniods</label>
+		    		{% render_field form.cannabinoids class="form-control" %}
+			    </div>
+			    <div class="form-group">
+			    	<label for="terpenes" class="col-2 col-form-label">Terpenes</label>
+		    		{% render_field form.terpenes class="form-control" %}
+			    </div>
 		  		<div class="form-group">
 				    <label for="description" class="col-2 col-form-label">Description</label>
 			    	{% render_field form.description class="form-control" %}
@@ -43,6 +55,9 @@
 	}
     $(document).ready(function() {
         document.getElementById('id_name').addEventListener('keydown', enable_button, false);
+        document.getElementById('id_genetics').addEventListener('keydown', enable_button, false);
+        document.getElementById('id_cannabinoids').addEventListener('keydown', enable_button, false);
+        document.getElementById('id_terpenes').addEventListener('keydown', enable_button, false);
         document.getElementById('id_description').addEventListener('keydown', enable_button, false);
     });
 </script>
@@ -66,6 +81,18 @@
 				<div class="form-group">
 			    	<label for="name" class="col-2 col-form-label">Name</label>
 		    		{% render_field form.name class="form-control" %}
+			    </div>
+			    <div class="form-group">
+			    	<label for="genetics" class="col-2 col-form-label">Genetics</label>
+		    		{% render_field form.genetics class="form-control" %}
+			    </div>
+			    <div class="form-group">
+			    	<label for="cannabinoids" class="col-2 col-form-label">Cannabinoids</label>
+		    		{% render_field form.cannabinoids class="form-control" %}
+			    </div>
+			    <div class="form-group">
+			    	<label for="terpenes" class="col-2 col-form-label">Terpenes</label>
+		    		{% render_field form.terpenes class="form-control" %}
 			    </div>
 		  		<div class="form-group">
 				    <label for="description" class="col-2 col-form-label">Description</label>
