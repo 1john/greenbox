@@ -30,7 +30,15 @@ html, body {
 
 .contact-section{
 	height:100%;
+	padding:60px;
 }
 .myfooter{
 	background-color:#edeff2;
+}
+.contact-content {
+	text-align:left;
+	padding:40px;
+}
+a.no-underline{
+	text-decoration:none;
 }
