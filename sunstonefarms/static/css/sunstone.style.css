@@ -1,5 +1,5 @@
 .myslider{
-	max-width:1000px;
+	max-width:83%;
 	margin: 0 auto;
 	padding-bottom:30px;
 }
@@ -24,8 +24,8 @@
 }
 
 html, body {
+	overflow-y:hidden;
 	height:100%;
-	background-color:white;
 }
 
 .contact-section{
@@ -45,4 +45,7 @@ a.no-underline{
 .itemdescription{
 	padding-left: 7%;
 	text-align:left;
+}
+.section-subheading{
+	max-width:95%;
 }
