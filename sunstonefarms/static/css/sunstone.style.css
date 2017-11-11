@@ -48,3 +48,9 @@ a.no-underline{
 .section-subheading{
 	max-width:95%;
 }
+
+@media (max-width: 479px) {
+	.itemdiv{
+		width:95%;
+	}
+}
