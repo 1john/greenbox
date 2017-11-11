@@ -14,7 +14,7 @@ def home(request, site_name=None):
 
     if not site_name:
         site_name = ''
-        if request.get_host().contains('sunstonefarmsoregon'):
+        if 'sunstonefarmsoregon' in request.get_host():
             site_name='sunstonefarms'
 
     try:
@@ -43,7 +43,7 @@ def showcase(request, site_name=None):
     
     if not site_name:
         site_name = ''
-        if request.get_host().contains('sunstonefarmsoregon'):
+        if 'sunstonefarmsoregon' in request.get_host():
             site_name='sunstonefarms'
 
     try:
@@ -68,7 +68,7 @@ def about(request, site_name=None):
     
     if not site_name:
         site_name = ''
-        if request.get_host().contains('sunstonefarmsoregon'):
+        if 'sunstonefarmsoregon' in request.get_host():
             site_name='sunstonefarms'
 
     try:
@@ -90,7 +90,7 @@ def contact(request, site_name=None):
     
     if not site_name:
         site_name = ''
-        if request.get_host().contains('sunstonefarmsoregon'):
+        if 'sunstonefarmsoregon' in request.get_host():
             site_name='sunstonefarms'
 
     try:
