@@ -13,6 +13,8 @@ import time, os, urllib, hmac, json, binascii, base64 #for s3_sign_put
 
 
 def team(request): #create/update team object
+    team = None
+    
     if Team.objects.filter(user=request.user).exists():
         team = Team.objects.get(user=request.user)
     
@@ -26,12 +28,14 @@ def team(request): #create/update team object
 
     if team:
     	form = TeamForm(instance = team)
+
     else:
     	form = TeamForm()
 
     args = {}
     args['form'] = form
     args['team'] = team
+
     #args.update(csrf(request))
     return render(request, 'templates/showcase/team.html', args)
 
