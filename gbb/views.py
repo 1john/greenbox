@@ -12,17 +12,17 @@ def home(request, site_name=None):
     template = 'templates/'
     args = {}
 
-    if site_name:
-        try:
-            current_site = Site.objects.get(name=site_name)
-        except Site.DoesNotExist:
-            return render(request, 'templates/index.html')
-    else:
-        try:
-            current_site = get_current_site(request)
-        except Site.DoesNotExist:
-            return render(request, 'templates/index.html')
+    if not site_name:
+        site_name = ''
+        if request.get_host().contains('sunstonefarmsoregon'):
+            site_name='sunstonefarms'
 
+    try:
+        current_site = Site.objects.get(name=site_name)
+    except Site.DoesNotExist:
+        return render(request, 'templates/index.html')
+
+    
     try:
         team = Team.objects.get(site=current_site)
         template += 'sites/' + team.template_dir + '/'
@@ -41,19 +41,16 @@ def home(request, site_name=None):
 def showcase(request, site_name=None):
     template = 'templates/'
     
-    if site_name:
-        try:
-            current_site = Site.objects.get(name=site_name)
-        except Site.DoesNotExist:
-            return HttpResponseRedirect('/')
-    else:
-        if request.META['HTTP_HOST'].contains('sunstonefarmsoregon')
-            try:
-                current_site = Site.objects.get(domain='sunstonefarmsoregon.com')
-            except Site.DoesNotExist:
-                return HttpResponseRedirect('/')
-        else:
-            return HttpResponseRedirect('/')
+    if not site_name:
+        site_name = ''
+        if request.get_host().contains('sunstonefarmsoregon'):
+            site_name='sunstonefarms'
+
+    try:
+        current_site = Site.objects.get(name=site_name)
+    except Site.DoesNotExist:
+        return HttpResponseRedirect('/')
+
     
     team = Team.objects.get(site=current_site)
     template += 'sites/' + team.template_dir + '/'
@@ -69,20 +66,15 @@ def showcase(request, site_name=None):
 def about(request, site_name=None):
     template = 'templates/'
     
-    if site_name:
-        try:
-            current_site = Site.objects.get(name=site_name)
-        except Site.DoesNotExist:
-            return HttpResponseRedirect('/')
-    else:
-        try:
-        if request.META['HTTP_HOST'].contains('sunstonefarmsoregon')
-            try:
-                current_site = Site.objects.get(domain='sunstonefarmsoregon.com')
-            except Site.DoesNotExist:
-                return HttpResponseRedirect('/')
-        else:
-            return HttpResponseRedirect('/')
+    if not site_name:
+        site_name = ''
+        if request.get_host().contains('sunstonefarmsoregon'):
+            site_name='sunstonefarms'
+
+    try:
+        current_site = Site.objects.get(name=site_name)
+    except Site.DoesNotExist:
+        return HttpResponseRedirect('/')
     
     team = Team.objects.get(site=current_site)
     template += 'sites/' + team.template_dir + '/'
@@ -96,19 +88,15 @@ def about(request, site_name=None):
 def contact(request, site_name=None):
     template = 'templates/'
     
-    if site_name:
-        try:
-            current_site = Site.objects.get(name=site_name)
-        except Site.DoesNotExist:
-            return HttpResponseRedirect('/')
-    else:
-        if request.META['HTTP_HOST'].contains('sunstonefarmsoregon')
-            try:
-                current_site = Site.objects.get(domain='sunstonefarmsoregon.com')
-            except Site.DoesNotExist:
-                return HttpResponseRedirect('/')
-        else:
-            return HttpResponseRedirect('/')
+    if not site_name:
+        site_name = ''
+        if request.get_host().contains('sunstonefarmsoregon'):
+            site_name='sunstonefarms'
+
+    try:
+        current_site = Site.objects.get(name=site_name)
+    except Site.DoesNotExist:
+        return HttpResponseRedirect('/')
 
     team = Team.objects.get(site=current_site)
     template += 'sites/' + team.template_dir + '/'    
