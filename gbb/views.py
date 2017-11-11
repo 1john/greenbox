@@ -26,6 +26,7 @@ def home(request, site_name=None):
     try:
         team = Team.objects.get(site=current_site)
         template += 'sites/' + team.template_dir + '/'
+        
         items = Item.objects.filter(team=team)[0:4]
         items = items[::-1]
 
@@ -46,9 +47,12 @@ def showcase(request, site_name=None):
         except Site.DoesNotExist:
             return HttpResponseRedirect('/')
     else:
-        try:
-            current_site = get_current_site(request)
-        except Site.DoesNotExist:
+        if request.META['HTTP_HOST'].contains('sunstonefarmsoregon')
+            try:
+                current_site = Site.objects.get(domain='sunstonefarmsoregon.com')
+            except Site.DoesNotExist:
+                return HttpResponseRedirect('/')
+        else:
             return HttpResponseRedirect('/')
     
     team = Team.objects.get(site=current_site)
@@ -72,8 +76,12 @@ def about(request, site_name=None):
             return HttpResponseRedirect('/')
     else:
         try:
-            current_site = get_current_site(request)
-        except Site.DoesNotExist:
+        if request.META['HTTP_HOST'].contains('sunstonefarmsoregon')
+            try:
+                current_site = Site.objects.get(domain='sunstonefarmsoregon.com')
+            except Site.DoesNotExist:
+                return HttpResponseRedirect('/')
+        else:
             return HttpResponseRedirect('/')
     
     team = Team.objects.get(site=current_site)
@@ -94,9 +102,12 @@ def contact(request, site_name=None):
         except Site.DoesNotExist:
             return HttpResponseRedirect('/')
     else:
-        try:
-            current_site = get_current_site(request)
-        except Site.DoesNotExist:
+        if request.META['HTTP_HOST'].contains('sunstonefarmsoregon')
+            try:
+                current_site = Site.objects.get(domain='sunstonefarmsoregon.com')
+            except Site.DoesNotExist:
+                return HttpResponseRedirect('/')
+        else:
             return HttpResponseRedirect('/')
 
     team = Team.objects.get(site=current_site)
