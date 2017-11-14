@@ -16,10 +16,7 @@ function s3_upload_img(extension, file_in, try_in){
         s3_sign_put_url: '/sign_s3_put/',
         s3_object_name: filename,
         onProgress: function(percent, message) {
-            //console.log(document.getElementById("image_preview").getAttribute("src"));
-            if(document.getElementById("image_preview").getAttribute("src") !== "../static/img/image_loading.gif"){
-                $('#image_preview').attr('src', "../static/img/image_loading.gif");
-            }
+            $('#img_status').text("Uploading: " + percent + "%");
         },
         onFinishS3Put: function(url) {
             $("#id_img_url").val(url);

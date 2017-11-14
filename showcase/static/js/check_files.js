@@ -35,6 +35,8 @@ function check_img(e){
             ){
             alert('The file you have uploaded is not of proper format.\nYou selected: ' + sFileExtension + '\nPlease try again.\nAcceptable types: jpg, jpeg, png, tiff, tif, jp2, jif, gif.');
         } else {
+            //loading gif
+            $('#image_preview').attr('src', "/static/img/image_loading.gif");
             //when all checks are passed, call s3 upload js function
             s3_upload_img(sFileExtension, sFileName, 1);
         }

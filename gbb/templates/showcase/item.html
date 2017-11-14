@@ -12,9 +12,10 @@
 	</div>
 	<div class="row">
 		<div class="col-sm-6 mb-3">
-			<img id="image_preview" src="{{ item.img_url }}" height="256" width="256">
+			<img id="image_preview" src="{{ item.thumbnail }}" height="256" width="256">
 		    <input id="img_file" type="file" class="form-control-file"/>
 		    <small id="fileHelp" class="form-text text-muted">If loading takes too long, try a smaller or lower quality image.</small>
+		   	<div id="img_status"></div>
 		</div>
 		<div class="col-sm-6 mb-3">
 			<form action="/item/{{item.id}}/" method="post">
@@ -73,6 +74,7 @@
 			<img id="image_preview" src="{% static 'img/item_img_placeholder.png' %}" height="256" width="256">
 		    <input id="img_file" type="file" class="form-control-file"/>
 		    <small id="fileHelp" class="form-text text-muted">If loading takes too long, try a smaller or lower quality image.</small>
+		    <div id="img_status"></div>
 		</div>
 		
 		<div class="col-sm-6 mb-3">
