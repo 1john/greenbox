@@ -26,10 +26,13 @@
 html, body {
 	height:100%;
 }
-
+.wrapper{
+	background-color:white;
+}
 .contact-section{
 	height:100%;
 	padding:60px;
+	background-color:white;
 }
 .myfooter{
 	background-color:#edeff2;
@@ -74,3 +77,8 @@ a.no-underline{
 	position:relative;
 	top:50%;
 }
+
+a .activenav{
+	color:#fc9325;
+}
+

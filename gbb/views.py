@@ -9,9 +9,6 @@ from django.contrib.sites.models import Site
 
 
 def home(request, site_name=None):
-    template = 'templates/'
-    args = {}
-
     if not site_name:
         site_name = ''
         if 'sunstonefarmsoregon' in request.get_host():
@@ -25,12 +22,13 @@ def home(request, site_name=None):
     
     try:
         team = Team.objects.get(site=current_site)
-        template += 'sites/' + team.template_dir + '/'
+        template = 'templates/sites/' + team.template_dir + '/'
         
         items = Item.objects.filter(team=team)[0:4]
         items = items[::-1]
 
-        args['site_name'] = team.template_dir
+        args = {}
+        args['site_name'] = site_name
         args['team'] = team
         args['highlights'] = items
         return render(request, template+'index.html', args)
@@ -38,9 +36,7 @@ def home(request, site_name=None):
     except Team.DoesNotExist:
         return render(request, 'templates/index.html')
 
-def showcase(request, site_name=None):
-    template = 'templates/'
-    
+def showcase(request, site_name=None):    
     if not site_name:
         site_name = ''
         if 'sunstonefarmsoregon' in request.get_host():
@@ -53,19 +49,17 @@ def showcase(request, site_name=None):
 
     
     team = Team.objects.get(site=current_site)
-    template += 'sites/' + team.template_dir + '/'
+    template = 'templates/sites/' + team.template_dir + '/'
     items = Item.objects.filter(team=team)
     items = items[::-1]
     
     args={}
-    args['site_name'] = team.template_dir
+    args['site_name'] = site_name
     args['team'] = team
     args['items'] = items
     return render(request, template+'showcase.html', args)
 
-def about(request, site_name=None):
-    template = 'templates/'
-    
+def about(request, site_name=None):    
     if not site_name:
         site_name = ''
         if 'sunstonefarmsoregon' in request.get_host():
@@ -77,17 +71,15 @@ def about(request, site_name=None):
         return HttpResponseRedirect('/')
     
     team = Team.objects.get(site=current_site)
-    template += 'sites/' + team.template_dir + '/'
+    template = 'templates/sites/' + team.template_dir + '/'
     items = Item.objects.filter(team=team)
 
     args={}
-    args['site_name'] = team.template_dir
+    args['site_name'] = site_name
     args['team'] = team
     return render(request, template+'about.html', args)
 
-def contact(request, site_name=None):
-    template = 'templates/'
-    
+def contact(request, site_name=None):    
     if not site_name:
         site_name = ''
         if 'sunstonefarmsoregon' in request.get_host():
@@ -99,10 +91,10 @@ def contact(request, site_name=None):
         return HttpResponseRedirect('/')
 
     team = Team.objects.get(site=current_site)
-    template += 'sites/' + team.template_dir + '/'    
+    template = 'templates/sites/' + team.template_dir + '/'    
 
     args={}
-    args['site_name'] = team.template_dir
+    args['site_name'] = site_name
     args['team'] = team
     return render(request, template+'contact.html', args)
 
