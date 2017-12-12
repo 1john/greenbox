@@ -2,14 +2,14 @@
 {% load static %}
 {% block content %}
 
-  <div class="showcasesection">
-    <div class="section-title-group">
-      <h2 class="centered section-heading">Inventory</h2>
-      <div class="center section-subheading">Check out what we&#x27;ve got to offer...</div>
-      <p class="paragraph-6"><strong>Updated regularly with new products and lab results. Get in touch to learn more or request an order.</strong></p>
-    </div>
-<div class="showcasediv">
-{% for item in items %}
+<div class="showcasesection">
+  <div class="section-title-group">
+    <h2 class="centered section-heading">Inventory</h2>
+    <div class="center section-subheading">Check out what we&#x27;ve got to offer...</div>
+    <p class="paragraph-6"><strong>Updated regularly with new products and lab results. Get in touch to learn more or request an order.</strong></p>
+  </div>
+  <div class="showcasediv">
+  {% for item in items %}
     <div class="itemdiv">
       <a href="#" class="lightbox-link w-inline-block w-lightbox">
         <img src="{{ item.thumbnail }}">
@@ -39,16 +39,16 @@
   </div>
 </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
-  <script src="{% static 'js/webflow.js' %}" type="text/javascript"></script>
-  <script type="text/javascript" src="{% static 'js/sunstonemain.js' %}"></script>
-  
-  <script type="text/javascript">
-    ageVerify();
-    function addNav(){
-      document.getElementById('showcasenav').className += " w--current";
-    }
-    window.onload = addNav;
-  </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
+<script src="{% static 'js/webflow.js' %}" type="text/javascript"></script>
+<script type="text/javascript" src="{% static 'js/sunstonemain.js' %}"></script>
+
+<script type="text/javascript">
+  ageVerify();
+  function addNav(){
+    document.getElementById('showcasenav').className += " w--current";
+  }
+  window.onload = addNav;
+</script>
 
 {% endblock %}

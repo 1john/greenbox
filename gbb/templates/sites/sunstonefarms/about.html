@@ -2,16 +2,61 @@
 {% load static %}
 {% block content %}
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
-  <script src="{% static 'js/webflow.js' %}" type="text/javascript"></script>
-  <script type="text/javascript" src="{% static 'js/sunstonemain.js' %}"></script>
-  
-  <script type="text/javascript">
-    ageVerify();
-    function addNav(){
-    	document.getElementById('aboutnav').className += " w--current";
-    }
-    window.onload = addNav;
-  </script>
+<div class="aboutsection">
+	<div class="section-title-group">
+	  <h2 class="centered section-heading">Hi, we're Sunstone</h2>
+	  <div class="center section-subheading">We love what we do, and we're proud of it. Take a look around our operation to see how we do things.</div>
+	<!--   <p class="paragraph-6"><strong>Updated regularly with new products and lab results. Get in touch to learn more or request an order.</strong></p> -->
+	</div>
+
+	<div class="row">
+		<div class="col-4">
+		</div>
+		<div class="col-8">
+			<h3>What goes in</h3>
+			<p>We use all organic soil sourced right here in Eugene, Oregon from our good buddies over at Roots Organics</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-8">
+			<h3>The Process</h3>
+			<p>Our girls drink only the finest tea's. Aerated for 24 hours to release all that good good.</p>
+		</div>
+		<div class="col-4">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-4">
+		</div>
+		<div class="col-8">
+			<h3>What comes out</h3>
+			<p>We flush out all the bad stuff and hand trim every happy little bud. Then cure everything in glass jars to ensure that dank dank dank.</p>
+		</div>
+	</div>
+
+
+
+
+	<div class="w-container">
+		
+
+	</div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
+<script src="{% static 'js/webflow.js' %}" type="text/javascript"></script>
+<script type="text/javascript" src="{% static 'js/sunstonemain.js' %}"></script>
+
+<script type="text/javascript">
+ageVerify();
+function addNav(){
+	document.getElementById('aboutnav').className += " w--current";
+}
+window.onload = addNav;
+</script>
 
 {% endblock %}
