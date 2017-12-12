@@ -5,7 +5,7 @@
         <h1 class="bd-featurette-title">Welcome Back</h1>
         <p class="bd-lead">You know what to do</p>
     </div>
-    <div class="col-md-2 col-centered">
+    <div class="col-md-3 col-centered">
         <form action="../auth/" method="POST">
             {% csrf_token %}
             <div class="form-group">
@@ -17,7 +17,7 @@
                 <input class="log-input form-control" type ="password" name="password" id="password">
             </div>
 <!--        <p><a href="/recover/">Forgot password</a>?</p> -->
-            <input class="submit-login btn btn-lg btn-success" type="submit" value="Login" />
+            <input class="submit-login btn btn-lg btn-success pull-right" type="submit" value="Login" />
         </form>
     </div>
 </div>

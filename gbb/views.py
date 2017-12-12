@@ -9,7 +9,10 @@ from django.contrib.sites.models import Site
 
 
 def home(request, site_name=None):
-    if not site_name:
+    args = {}
+    if site_name:
+        args['site_name'] = site_name
+    else:
         site_name = ''
         if 'sunstonefarmsoregon' in request.get_host():
             site_name='sunstonefarms'
@@ -27,8 +30,6 @@ def home(request, site_name=None):
         items = Item.objects.filter(team=team)[0:4]
         items = items[::-1]
 
-        args = {}
-        args['site_name'] = site_name
         args['team'] = team
         args['highlights'] = items
         return render(request, template+'index.html', args)
@@ -37,7 +38,10 @@ def home(request, site_name=None):
         return render(request, 'templates/index.html')
 
 def showcase(request, site_name=None):    
-    if not site_name:
+    args = {}
+    if site_name:
+        args['site_name'] = site_name
+    else:
         site_name = ''
         if 'sunstonefarmsoregon' in request.get_host():
             site_name='sunstonefarms'
@@ -53,14 +57,15 @@ def showcase(request, site_name=None):
     items = Item.objects.filter(team=team)
     items = items[::-1]
     
-    args={}
-    args['site_name'] = site_name
     args['team'] = team
     args['items'] = items
     return render(request, template+'showcase.html', args)
 
 def about(request, site_name=None):    
-    if not site_name:
+    args = {}
+    if site_name:
+        args['site_name'] = site_name
+    else:
         site_name = ''
         if 'sunstonefarmsoregon' in request.get_host():
             site_name='sunstonefarms'
@@ -74,13 +79,14 @@ def about(request, site_name=None):
     template = 'templates/sites/' + team.template_dir + '/'
     items = Item.objects.filter(team=team)
 
-    args={}
-    args['site_name'] = site_name
     args['team'] = team
     return render(request, template+'about.html', args)
 
 def contact(request, site_name=None):    
-    if not site_name:
+    args = {}
+    if site_name:
+        args['site_name'] = site_name
+    else:
         site_name = ''
         if 'sunstonefarmsoregon' in request.get_host():
             site_name='sunstonefarms'
@@ -93,8 +99,6 @@ def contact(request, site_name=None):
     team = Team.objects.get(site=current_site)
     template = 'templates/sites/' + team.template_dir + '/'    
 
-    args={}
-    args['site_name'] = site_name
     args['team'] = team
     return render(request, template+'contact.html', args)
 
