@@ -37,7 +37,7 @@ urlpatterns = [
     url(r'^dashboard/$', showcaseviews.dashboard, name="dashboard"),
     
     #sites
-    url(r'^sites/(?P<site_name>[-\w]+)/$', views.home, name="home"),
+    url(r'^sites/(?P<site_name>[-\w]+)/$', views.sites, name="sites"),
     url(r'^showcase/$', views.showcase, name="showcase"),
     url(r'^showcase/(?P<site_name>[-\w]+)/$', views.showcase, name="showcase"),
     url(r'^about/$', views.about, name="about"),

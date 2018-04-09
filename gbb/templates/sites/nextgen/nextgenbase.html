@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Next Generation Nurseries</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  {% load static %}
+  <link rel="stylesheet" href="{% static '/css/nextgen.style.css' %}">
+<!--   <link rel="icon" type="image/png" href="{% static '/img/sunstone_favicon_32_transparent.png' %}"/>
+ -->
+
+</head>
+<body>
+
+<!-- NAV BAR -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid" id="nav-container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <a class="navbar-brand" href="/">
+      <img src="{% static '/img/ngn_logo_60px.png' %}" height="60px">
+    </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" id="home-nav-container"><a href="/sites/{{ site_name }}"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li role="presentation" id="showcase-nav-container"><a href="/showcase/{{ site_name }}"> <span class="glyphicon glyphicon-picture"></span> Showcase</a></li>
+        <li role="presentation" id="contact-nav-container"><a href="/contact/{{ site_name }}"> <span class="glyphicon glyphicon-earphone"></span> Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<script type="text/javascript">
+  //Stack menu when collapsed
+  $('#myNavbar').on('show.bs.collapse', function() {
+      $('.nav-pills').addClass('nav-stacked');
+  });
+  //Unstack menu when not collapsed
+  $('#myNavbar').on('hide.bs.collapse', function() {
+      $('.nav-pills').removeClass('nav-stacked');
+  });
+</script>
+<!-- END NAVBAR -->
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

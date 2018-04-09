@@ -28,6 +28,7 @@ SECRET_KEY = '$2!ik4e@)$g5bvp_*dy2yi7-e3oi)b=f_nx@wl8z$-%bn3mst*'
 DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0',
+                'localhost',
                 'greenbox-branding.herokuapp.com',
                 'greenboxbranding.com',
                 'www.greenboxbranding.com',
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'showcase',
     'sunstonefarms',
+    'nextgen',
 ]
 
 MIDDLEWARE = [

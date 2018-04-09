@@ -1,0 +1,61 @@
+{% extends "templates/sites/nextgen/nextgenbase.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- BANNER -->
+<section class="jumbotron text-center">
+	<div class="container">
+		<h1 class="jumbotron-heading">Next Generation Nurseries</h1>
+		<div class="row">
+			<div class="col-sm-6 col-centered">
+				<p class="lead text-muted">We'll sell you babies!</p>
+			</div>
+		</div>
+		<p>
+			<a href="/showcase/{{ site_name }}" class="btn btn-lg">Show me what you got!</a>
+			<a href="/contact/{{ site_name }}" class="btn btn-lg">I want some of those!</a>
+		</p>
+	</div>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+	<!-- ABOUT US -->
+	<div class="row">
+		<div class="col-4">
+			<img src="{% static '/img/item_img_placeholder.png' %}" height="300" width="250">
+		</div>
+		<div class="col-6">
+			<p>this is the first topic</p>
+		</div>
+	</div>
+	<!-- SHOWCASE -->
+	<div class="row">
+		<div class="col-8">
+			<p>this is the second topic</p>
+		</div>
+		<div class="col-4">
+			<img src="{% static '/img/item_img_placeholder.png' %}" height="300" width="250">
+		</div>
+	</div>
+	<!-- CONTACT US -->
+	<div class="row">
+		<div class="col-4">
+			<img src="{% static '/img/item_img_placeholder.png' %}" height="300" width="250">
+		</div>
+		<div class="col-8">
+			<p>this is the third topic</p>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+  function activeNav(){
+    document.getElementById("home-nav-container").className += "active";
+  }
+  window.onload = activeNav;
+</script>
+
+{% endblock %}

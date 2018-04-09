@@ -7,20 +7,49 @@ from showcase.models import Team, Item
 from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.sites.models import Site
 
-
-def home(request, site_name=None):
+#for live sites, checks domain to know which site we are on
+def home(request):
     args = {}
-    if site_name:
-        args['site_name'] = site_name
+
+    if 'sunstonefarmsoregon' in request.get_host():
+        site_name='sunstonefarms'
+    elif 'FIXME' in request.get_host():
+        site_name='nextgennurseries'
     else:
-        site_name = ''
-        if 'sunstonefarmsoregon' in request.get_host():
-            site_name='sunstonefarms'
+        return render(request, 'templates/index.html')
 
     try:
         current_site = Site.objects.get(name=site_name)
     except Site.DoesNotExist:
         return render(request, 'templates/index.html')
+
+    
+    try:
+        team = Team.objects.get(site=current_site)
+        template = 'templates/sites/' + team.template_dir + '/'
+        
+        items = Item.objects.filter(team=team)[0:4]
+        items = items[::-1] #reverse order
+
+        args['team'] = team
+        args['highlights'] = items
+        return render(request, template+'index.html', args)
+    
+    except Team.DoesNotExist:
+        return render(request, 'templates/index.html')
+
+#for development purposes only
+def sites(request, site_name=None):
+    args = {}
+    if site_name:
+        args['site_name'] = site_name
+    else:
+        return HttpResponseRedirect('/')
+
+    try:
+        current_site = Site.objects.get(name=site_name)
+    except Site.DoesNotExist:
+        return HttpResponseRedirect('/')
 
     
     try:
@@ -35,7 +64,8 @@ def home(request, site_name=None):
         return render(request, template+'index.html', args)
     
     except Team.DoesNotExist:
-        return render(request, 'templates/index.html')
+        return HttpResponseRedirect('/')
+
 
 def showcase(request, site_name=None):    
     args = {}
