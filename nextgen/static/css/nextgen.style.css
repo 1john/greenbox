@@ -31,6 +31,7 @@ padding-top: 60px;
     padding-top: 0;
 }
 
+/* HERO */
 h1.jumbotron-heading{
 	color:#066638;
 }
@@ -46,3 +47,34 @@ a.btn.btn-lg:hover{
     float: none;
     margin: 0 auto;
 } 
+
+/* BODY */
+.topic-padding{
+	padding-top:15px;
+	padding-bottom:15px;
+	vertical-align: center;
+}
+
+/* FOOTER */
+.footer-wrap{
+	padding-top:50px;
+	width:100%;
+	left:0;
+	max-height:205px;
+}
+.footer-upper{
+	background-color:#edeff2;
+}
+.footer-text-wrapper{
+	padding-top:15px;
+	padding-bottom:15px;
+}
+.footer-lower{
+	background-color:#383838;
+}
+.footer-lower-text-wrapper{
+	text-align:center;
+	color:white;
+	padding-top:10px;
+	padding-bottom:10px;
+}
