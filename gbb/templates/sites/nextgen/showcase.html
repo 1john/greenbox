@@ -1,0 +1,28 @@
+{% extends "templates/sites/nextgen/nextgenbase.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="showcase container">
+	{% for item in items %}
+	<div class="item">
+		<img class="thumbnail" src="{{item.thumbnail}}">
+		<div class="item-text-wrapper">
+			<h4 class="item_name">{{ item.name }}</h4>
+			<p class="item_description"><strong>Genetics: </strong>{{ item.genetics }}</p>
+			<p class="item_description"><strong>Cannabinoids: </strong>{{ item.cannabinoids }}</p>
+			<p class="item_description"><strong>Terpenes: </strong>{{ item.terpenes }}</p>
+			<p class="item_description"><strong>Description: </strong>{{ item.description }}</p>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
+<script type="text/javascript">
+  function activeNav(){
+    document.getElementById("showcase-nav-container").className += "active";
+  }
+  window.onload = activeNav;
+</script>
+
+{% endblock %}
