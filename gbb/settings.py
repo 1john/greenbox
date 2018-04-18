@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'showcase',
     'sunstonefarms',
     'nextgen',
+    'heartoftv',
 ]
 
 MIDDLEWARE = [

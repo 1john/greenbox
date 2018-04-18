@@ -1,10 +1,11 @@
-/* NAVBAR */
 .navbar{
 	padding: 0px 16px 0px 32px;
 }
 .navbar-brand{
 	padding:0px;
 }
+
+/* NAVBAR */
 body {
 padding-top: 60px;
 }
@@ -31,9 +32,6 @@ padding-top: 60px;
 }
 
 /* HERO */
-.jumbotron{
-	height:600px;
-}
 h1.jumbotron-heading{
 	color:#066638;
 }
@@ -52,8 +50,8 @@ a.btn.btn-lg:hover{
 
 /* BODY */
 .topic-padding{
-	padding-top:150px;
-	padding-bottom:150px;
+	padding-top:15px;
+	padding-bottom:15px;
 	vertical-align: center;
 }
 

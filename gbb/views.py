@@ -15,6 +15,8 @@ def home(request):
         site_name='sunstonefarms'
     elif 'FIXME' in request.get_host():
         site_name='nextgennurseries'
+    elif 'FIXME' in request.get_host():
+        site_name='heartoftv'
     else:
         return render(request, 'templates/index.html')
 

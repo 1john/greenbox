@@ -30,7 +30,11 @@
   <link href="{% static 'images/Webclip.png' %}" rel="apple-touch-icon">
 <!-- Slick Slider -->
   <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}"/> 
+  <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}"/>
+  <!-- Animate on Scroll Library -->
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
+
 </head>
 <!-- NAV -->
   <div data-collapse="medium" data-animation="default" data-duration="400" class="navigation-bar w-nav">
@@ -86,6 +90,11 @@
 </div>
 </div>
   
-  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <!-- Animate on Scroll Library -->
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+  <script type="text/javascript">
+    AOS.init();
+  </script>
+
 </body>
 </html>
