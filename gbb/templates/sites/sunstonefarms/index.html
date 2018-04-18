@@ -11,14 +11,14 @@
 </div>
 <div class="highlights">
   <div class="section-title-group">
-  <h2 style="padding-top:100px;" data-aos="slide-right" class="centered section-heading white">New Releases</h2>
-  <div style="padding-bottom:30px" data-aos="slide-right" data-aos-duration="1200" class="center section-subheading off-white">We just cropped these beauties</div>
+  <h2 style="padding-top:100px;" data-aos="fade-left" class="centered section-heading white">New Releases</h2>
+  <div style="padding-bottom:30px" data-aos="fade-right" data-aos-duration="1200" class="center section-subheading off-white">We just cropped these beauties</div>
   </div>
   <div class="myslider" style="padding-bottom:100px">
     {% for highlight in highlights %}
       <div>
         <img src="{{ highlight.thumbnail }}" />
-        <h3 style="padding-top:10px; color:white">{{ highlight.name }}</h3>
+        <h3 style="font-size: 14px; padding-top:10px; color:white">{{ highlight.name }}</h3>
       </div>
     {% endfor %}
   </div>
