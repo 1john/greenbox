@@ -1,12 +1,32 @@
 {% extends "templates/base.html" %}
+{% load static %}
 {% block content %}
 <div id="body-fadein">
 <div class="container">
-  <div class="col-md-8 col-centered">
-    <h1 class="bd-featurette-title">GreenBox Branding</h1>
-    <p class="bd-lead">Providing all the things</p>
-  </div>
-  </div>
+    <div class="col-md-6 col-centered">
+        <h1 class="bd-featurette-title">GreenBox Branding</h1>
+        <p class="bd-lead">Providing all the things</p>
+    </div>
+    <div class="row provision-section">
+        <div class="col-md-4 provision">
+            <div class="provision-icon-wrapper">
+                <img class="provision-icon" src="{% static '/img/media-icon.png' %}">
+            </div>
+            <h3>Media</h3>
+        </div>
+        <div class="col-md-4 provision">
+            <div class="provision-icon-wrapper">
+                <img class="provision-icon" src="{% static '/img/design-icon.png' %}">
+            </div>
+            <h3>Design</h3>
+        </div>
+        <div class="col-md-4 provision">
+            <div class="provision-icon-wrapper">
+                <img class="provision-icon" src="{% static '/img/develop-icon.png' %}">
+            </div>
+            <h3>Development</h3>
+        </div>
+    </div>
 </div>
 </div>
 

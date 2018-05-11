@@ -43,7 +43,7 @@ def dashboard(request): #view/delete item objects
     if Team.objects.filter(user=request.user).exists():
         team = Team.objects.get(user=request.user)
     else:
-        HttpResponseRedirect('/team')
+        return HttpResponseRedirect('/team')
 
     items = Item.objects.filter(team=team)
     items = items[::-1]
@@ -55,7 +55,7 @@ def item(request, item_id=None): #add/edit item object
         team = Team.objects.get(user=request.user)
 
     else:
-        HttpResponseRedirect('/team')
+        return HttpResponseRedirect('/team')
 
     args = {}
     if item_id:
