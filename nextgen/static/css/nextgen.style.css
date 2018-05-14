@@ -5,9 +5,6 @@
 .navbar-brand{
 	padding:0px;
 }
-body {
-padding-top: 60px;
-}
 
 .navbar-default .navbar-nav>li>a {
  	color: #066638;
@@ -32,10 +29,14 @@ padding-top: 60px;
 
 /* HERO */
 .jumbotron{
-	height:600px;
+	height:500px;
+	background-image: url('/static/img/next-gen-hero.png');
+	background-size: cover;
+	margin-bottom:0px;
 }
 h1.jumbotron-heading{
-	color:#066638;
+	color:white;
+	text-shadow: 2px 2px 5px #033d21;
 }
 
 a.btn.btn-lg{
@@ -51,11 +52,68 @@ a.btn.btn-lg:hover{
 } 
 
 /* BODY */
-.topic-padding{
-	padding-top:150px;
-	padding-bottom:150px;
-	vertical-align: center;
+body {
+	padding-top: 60px;
+	max-width:100%;
+	overflow-x:hidden;
+/*	background-image: url('/static/img/next-gen-background.png');
+*/	background-attachment: fixed;
+	background-size:auto;
+	background-repeat: repeat-y;
 }
+.mission-section{
+	padding-top:100px;
+}
+.mission-padding{
+	padding-top:40px;
+	padding-bottom:40px;
+}
+.mission-header{
+	height:200px;
+	color: #066638;
+}
+.mission-header-wrapper{
+	height:10px;
+	background-color: #066638;
+}
+.mission-header-text-wrapper{
+	padding: 50px 0px 50px 0px;
+	color:white;
+	text-shadow: 2px 2px 5px #033d21;
+}
+.mission-section-header{
+	color: #066638;
+}
+.mission-img{
+	height:200px;
+	width:200px;
+}
+.btn-primary{
+	background-color: #08914f;
+	border-color: #08914f;
+}
+.btn-primary:hover{
+	background-color: #0bc169;
+	border-color: #0bc169;
+}
+hr {
+    overflow: visible; /* For IE */
+    padding: 0;
+    border: none;
+    border-top: medium double #08914f;
+    color: #333;
+    text-align: center;
+}
+hr:after {
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+}
+
+
 
 /* FOOTER */
 .footer-wrap{
