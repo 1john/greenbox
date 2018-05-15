@@ -121,6 +121,11 @@ h1 {
 .mission-img-wrapper{
 	text-align:center;
 }
+.testimonials-section{
+	background-color: #f8f8f8;
+	padding: 50px 0px 100px 0px;
+	text-align: center;
+}
 .btn-primary{
 	background-color: #08914f;
 	border-color: #08914f;
@@ -175,8 +180,19 @@ hr:after {
 	padding:50px 0px 50px 0px;
 	text-align:center;
 }
-
-
+.items-container{
+	text-align:center;
+	padding-bottom:50px;
+}
+.item{
+	padding: 0px 20px 0px 20px;
+	display:inline-block;
+	text-align:left;
+}
+.item-thumbnail{
+	height:250px;
+	width:250px;
+}
 
 
 

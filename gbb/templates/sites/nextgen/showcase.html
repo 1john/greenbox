@@ -3,14 +3,16 @@
 
 {% block content %}
 <div class="showcase container">
-	<div class="showcase-header col-md-3 col-centered" data-aos="fade-up">
+	<div class="showcase-header col-md-5 col-centered" data-aos="fade-up">
 		<h1>Flower</h1>
 		<hr>
+		<p>Check out our selection below. Please contact us with any orders or inquiries.</p>
+		<a href="/contact/{{ site_name }}" class="btn btn-primary" data-aos="fade-right">Contact Us</a>
 	</div>
-	<div class="items">
+	<div class="items-container col-md-12 col-centered">
 		{% for item in items %}
 		<div class="item">
-			<img class="thumbnail" src="{{item.thumbnail}}">
+			<img class="item-thumbnail" src="{{item.thumbnail}}">
 			<div class="item-text-wrapper">
 				<h4 class="item_name">{{ item.name }}</h4>
 				<p class="item_description"><strong>Genetics: </strong>{{ item.genetics }}</p>
@@ -20,6 +22,8 @@
 			</div>
 		</div>
 		{% endfor %}
+
+
 	</div>
 </div>
 
