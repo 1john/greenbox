@@ -19,55 +19,103 @@
 		</p>
 	</div>
 </section>
+<!-- <div class="green-line"></div>
+ -->
 
 <!-- MAIN CONTENT -->
-<div class="mission-header-wrapper">
-</div>
-<!-- <div class="mission-header" style="text-align:center;">
-	<div class="mission-header-text-wrapper col-md-3">
-		<h2>Our mission</h2>
-		<hr>
-	</div>
-</div> -->
 
-<div class="mission-section" class="container">
-	<!-- MISSION SECTION -->
-	<div class="row mission-padding">
-		<div class="col-sm-3 col-sm-offset-2" data-aos="fade-right">
-			<img class="mission-img" src="{% static '/img/handshake.png' %}" height="300" width="250">
+<!-- OFFERINGS SECTION -->
+<div class="offerings-section">
+	<div class="mission-header" style="text-align:center;">
+		<div class="mission-header-text-wrapper col-md-3 col-centered" data-aos="fade-up">
+			<h1>What we offer</h1>
+			<hr>
 		</div>
-		<div class="col-sm-5" data-aos="fade-left">
-			<h3 class="mission-section-header">Relationships are Everything</h3>
-			<hr style="color:green">
-			<p>We strive to establish and maintain strong relationships with fellow cannabis companies, supporting markets and our customers.</p>
-			<a style="float:right" href="/contact/{{ site_name }}" class="btn btn-primary">Get in touch</a>
+	</div>
+	<div class="row">
+		<div class="col-sm-3 col-sm-offset-2" data-aos="fade-right">
+			<div class="offerings-img-wrapper">
+				<a href="/showcase"><img class="offerings-img" src="{% static '/img/flower-thumbnail.png' %}"></a>
+			</div>
+			<div class="offerings-text-wrapper">
+				<h3 class="offerings-header">Flower</h3>
+				<p class="offerings-text">We grow that good-good-good</p>
+			</div>
+		</div>
+		<div class="col-sm-3 col-sm-offset-2" data-aos="fade-left">
+			<div class="offerings-img-wrapper">
+				<a href="/nextgen/greenhouses"><img class="offerings-img" src="{% static '/img/greenhouse-thumbnail.png' %}"></a>
+			</div>
+			<div class="offerings-text-wrapper">
+				<h3 class="offerings-header">Greenhouses</h3>
+				<p class="offerings-text">We build super duper greenhouses</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <div class="green-line"></div> -->
+
+<!-- TESTIMONIALS SECTION -->
+<div class="testimonials-section">
+	<div class="testimonials-header">
+		<div class="testimonials-header-text-wrapper col-sm-3 col-centered">
+			<h1>Testimonials</h1>
+			<hr>
+		</div>
+	</div>
+</div>
+
+
+<!-- MISSION SECTION -->	
+<div class="mission-section container">
+	<div class="mission-header" style="text-align:center;">
+		<div class="mission-header-text-wrapper col-md-3 col-centered" data-aos="fade-up">
+			<h1>Our mission</h1>
+			<hr>
 		</div>
 	</div>
 	<div class="row mission-padding">
-		<div class="col-sm-5 col-sm-offset-2" data-aos="fade-right">
+		<div class="col-md-3 col-md-offset-2" data-aos="fade-right">
+			<div class="mission-img-wrapper">
+				<img class="mission-img" src="{% static '/img/handshake.png' %}" height="300" width="250">
+			</div>
+		</div>
+		<div class="col-md-5" data-aos="fade-left">
+			<h3 class="mission-section-header">Relationships are Everything</h3>
+			<hr>
+			<p class="mission-text">We strive to establish and maintain strong relationships with fellow cannabis companies, supporting markets and our customers.</p>
+			<a href="/contact/{{ site_name }}" class="btn btn-primary mission-link">Get in touch</a>
+		</div>
+	</div>
+	<div class="row mission-padding">
+		<div class="col-md-3  col-md-offset-2" data-aos="fade-right">
+			<div class="mission-img-wrapper">
+				<img class="mission-img" src="{% static '/img/greenhouse.png' %}" height="300" width="250">
+			</div>
+		</div>
+		<div class="col-md-5" data-aos="fade-left">
 			<h3 class="mission-section-header">Cutting-edge Tech</h3>
 			<hr>
-			<p>We use innovative greenhouse technologies to grow indoor-quality flower without the carbon footprint of artificial lightning.</p>
-			<a href="/contact/{{ site_name }}" class="btn btn-primary">View greenhouses</a>
-		</div>
-		<div class="col-sm-3" data-aos="fade-left">
-			<img style="float:right"class="mission-img" src="{% static '/img/greenhouse.png' %}" height="300" width="250">
+			<p class="mission-text">We use innovative greenhouse technologies to grow indoor-quality flower without the carbon footprint of artificial lightning.</p>
+			<a href="/contact/{{ site_name }}" class="btn btn-primary mission-link">View greenhouses</a>
 		</div>
 	</div>
 	<div class="row mission-padding">
-		<div class="col-sm-3 col-sm-offset-2" data-aos="fade-right">
-			<img class="mission-img" src="{% static '/img/growth.png' %}" height="300" width="250">
+		<div class="col-md-3 col-md-offset-2" data-aos="fade-right">
+			<div class="mission-img-wrapper">
+				<img class="mission-img" src="{% static '/img/growth.png' %}" height="300" width="250">
+			</div>
 		</div>
-		<div class="col-sm-5" data-aos="fade-left">
+		<div class="col-md-5" data-aos="fade-left">
 			<h3 class="mission-section-header">Quality Products</h3>
 			<hr>
-			<p>We provide our fellow farmers and dispensaries with the highest quality clones, free of disease and harmful pesticides.</p>
-			<a style="float:right" href="/contact/{{ site_name }}" class="btn btn-primary">Check out products</a>
+			<p class="mission-text">We provide our fellow farmers and dispensaries with the highest quality clones, free of disease and harmful pesticides.</p>
+			<a href="/contact/{{ site_name }}" class="btn btn-primary mission-link">Check out products</a>
 		</div>
 	</div>
 </div>
-
-
+<!-- <div class="green-line"></div>
+ -->
 <script type="text/javascript">
   function activeNav(){
     document.getElementById("home-nav-container").className += "active";

@@ -61,8 +61,31 @@ body {
 	background-size:auto;
 	background-repeat: repeat-y;
 }
+p {
+	color: grey;
+}
+h1 {
+	color: #066638;
+}
+.offerings-section{
+	background-color: #f8f8f8;
+	padding: 0px 0px 100px 0px;
+	text-align: center;
+}
+.offerings-img{
+	width:300px;
+	height:200px;
+/*	border: 1px solid;
+*/	box-shadow: 3px 3px 3px grey;
+}
+.offerings-header{
+	color: #066638;
+}
+.offerings-text{
+
+}
 .mission-section{
-	padding-top:100px;
+	padding-bottom:50px;
 }
 .mission-padding{
 	padding-top:40px;
@@ -71,22 +94,32 @@ body {
 .mission-header{
 	height:200px;
 	color: #066638;
-}
-.mission-header-wrapper{
+/*	text-shadow: 1px 1px 3px grey;
+*/}
+.green-line{
 	height:10px;
 	background-color: #066638;
 }
 .mission-header-text-wrapper{
 	padding: 50px 0px 50px 0px;
-	color:white;
-	text-shadow: 2px 2px 5px #033d21;
+	color: #066638;
 }
 .mission-section-header{
 	color: #066638;
-}
+/*	text-shadow: 1px 1px 1px grey;
+*/}
 .mission-img{
 	height:200px;
 	width:200px;
+}
+.mission-text{
+	padding-bottom:20px;
+}
+.mission-link{
+	float: right;
+}
+.mission-img-wrapper{
+	text-align:center;
 }
 .btn-primary{
 	background-color: #08914f;
@@ -113,11 +146,9 @@ hr:after {
     background: white;
 }
 
-
-
 /* FOOTER */
 .footer-wrap{
-	padding-top:50px;
+	padding-top:0px;
 	width:100%;
 	left:0;
 	max-height:205px;
@@ -138,3 +169,17 @@ hr:after {
 	padding-top:10px;
 	padding-bottom:10px;
 }
+
+/* SHOWCASE */
+.showcase-header{
+	padding:50px 0px 50px 0px;
+	text-align:center;
+}
+
+
+
+
+
+
+
+
