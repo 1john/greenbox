@@ -14,8 +14,8 @@
  -->			</div>
 		</div>
 		<p>
-			<a href="/showcase/{{ site_name }}" class="btn btn-lg" data-aos="fade-right">Flower</a>
-			<a href="/nextgen/greenhouses" class="btn btn-lg" data-aos="fade-left">Greenhouses</a>
+			<a href="/showcase/{{ site_name }}" class="btn btn-lg hero-button" data-aos="fade-right">Flower</a>
+			<a href="/nextgen/greenhouses" class="btn btn-lg hero-button" data-aos="fade-left">Greenhouses</a>
 		</p>
 	</div>
 </section>
@@ -31,23 +31,27 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-3 col-sm-offset-2" data-aos="fade-right">
-			<div class="offerings-img-wrapper">
-				<a href="/showcase"><img class="offerings-img" src="{% static '/img/flower-thumbnail.png' %}"></a>
-			</div>
-			<div class="offerings-text-wrapper">
-				<h3 class="offerings-header">Flower</h3>
-				<p class="offerings-text">We grow that good-good-good</p>
-			</div>
+		<div class="col-sm-3 col-sm-offset-3" data-aos="fade-right">
+			<a class="no-underline" href="/showcase"><div class="offering rise-hover">
+				<div class="offerings-img-wrapper">
+					<img class="offerings-img" src="{% static '/img/flower-thumbnail.png' %}">
+				</div>
+				<div class="offerings-text-wrapper">
+					<h3 class="offerings-header">Flower</h3>
+					<p class="offerings-text">We grow that good-good-good</p>
+				</div>
+			</div></a>
 		</div>
-		<div class="col-sm-3 col-sm-offset-2" data-aos="fade-left">
-			<div class="offerings-img-wrapper">
-				<a href="/nextgen/greenhouses"><img class="offerings-img" src="{% static '/img/greenhouse-thumbnail.png' %}"></a>
-			</div>
-			<div class="offerings-text-wrapper">
-				<h3 class="offerings-header">Greenhouses</h3>
-				<p class="offerings-text">We build super duper greenhouses</p>
-			</div>
+		<div class="col-sm-3" data-aos="fade-left">
+			<a class="no-underline" href="/nextgen/greenhouses"><div class="offering rise-hover">
+				<div class="offerings-img-wrapper">
+					<img class="offerings-img" src="{% static '/img/greenhouse-thumbnail.png' %}">
+				</div>
+				<div class="offerings-text-wrapper">
+					<h3 class="offerings-header">Greenhouses</h3>
+					<p class="offerings-text">We build super duper greenhouses</p>
+				</div>
+			</div></a>
 		</div>
 	</div>
 </div>

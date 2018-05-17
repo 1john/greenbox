@@ -2,16 +2,16 @@
 {% load static %}
 
 {% block content %}
-<div class="showcase container">
-	<div class="showcase-header col-md-5 col-centered" data-aos="fade-up">
+<div class="page container">
+	<div class="page-head col-md-5 col-centered" data-aos="fade-up">
 		<h1>Flower</h1>
 		<hr>
 		<p>Check out our selection below. Please contact us with any orders or inquiries.</p>
-		<a href="/contact/{{ site_name }}" class="btn btn-primary" data-aos="fade-right">Contact Us</a>
+		<a href="/contact/{{ site_name }}" class="btn btn-primary" >Contact Us</a>
 	</div>
 	<div class="items-container col-md-12 col-centered">
 		{% for item in items %}
-		<div class="item">
+		<div class="item rise-hover">
 			<img class="item-thumbnail" src="{{item.thumbnail}}">
 			<div class="item-text-wrapper">
 				<h4 class="item_name">{{ item.name }}</h4>

@@ -36,7 +36,7 @@
 }
 h1.jumbotron-heading{
 	color:white;
-	text-shadow: 2px 2px 5px #033d21;
+	text-shadow: 0px 0px 5px #033d21;
 }
 
 a.btn.btn-lg{
@@ -50,6 +50,10 @@ a.btn.btn-lg:hover{
     float: none;
     margin: 0 auto;
 } 
+.hero-button{
+	margin:5px;
+	width:150px;
+}
 
 /* BODY */
 body {
@@ -72,11 +76,12 @@ h1 {
 	padding: 0px 0px 100px 0px;
 	text-align: center;
 }
-.offerings-img{
+.offering{
 	width:300px;
-	height:200px;
-/*	border: 1px solid;
-*/	box-shadow: 3px 3px 3px grey;
+	padding:20px;
+}
+.offerings-img{
+	width:100%
 }
 .offerings-header{
 	color: #066638;
@@ -176,7 +181,7 @@ hr:after {
 }
 
 /* SHOWCASE */
-.showcase-header{
+.page-head{
 	padding:50px 0px 50px 0px;
 	text-align:center;
 }
@@ -185,17 +190,53 @@ hr:after {
 	padding-bottom:50px;
 }
 .item{
-	padding: 0px 20px 0px 20px;
+	width:250px;
+	padding: 20px;
 	display:inline-block;
 	text-align:left;
 }
+.item-text-wrapper{
+	padding:5px;
+}
 .item-thumbnail{
-	height:250px;
-	width:250px;
+	width:100%;
+}
+.rise-hover{
+	box-shadow:0px 0px 0px grey;
+}
+.rise-hover:hover{
+	box-shadow:1px 1px 5px grey;
+	transition: box-shadow .2s;
+	-webkit-transition: box-shadow .2s;
+}
+.no-underline:hover{
+	text-decoration: none;
 }
 
-
-
-
-
+/* AGE CHECK */
+ .age-check{
+ 	position:fixed;
+ 	top:0px;
+ 	left:0px;
+ 	width:100%;
+  	height:100%;
+ 	color:white;
+ 	text-transform:uppercase;
+ 	background: rgba(37,37,37,.97);
+ 	z-index:1001;
+ }
+.age-check p{
+	color:white;
+	font-size:38px;
+	margin-bottom:20px;
+}
+.age-check .text-wrapper{
+	text-align:center;
+	position:relative;
+	top:50%;
+}
+.btn-age-check{
+	margin:10px;
+	width:100px;
+}
 

@@ -13,12 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 import views
 from showcase import views as showcaseviews
 from django.conf import settings
 from django.conf.urls.static import static
+from nextgen import urls as nextgenurls
 
 
 urlpatterns = [
@@ -45,6 +46,9 @@ urlpatterns = [
     url(r'^contact/$', views.contact, name="contact"),
     url(r'^contact/(?P<site_name>[-\w]+)/$', views.contact, name="contact"),
 
+    #custom
+    url(r'^nextgen/', include(nextgenurls)),
+    
     #admin
     url(r'^admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) #serving static files for development
